@@ -1,0 +1,3 @@
+#! /bin/bash
+
+dmenu_run -i -fn 'Hack Nerd Font:size=10' -p ' Search  ' -nb '#2f343f' -nf '#e7e8eb' -sb '#81A1C1' -sf '#2f343f'

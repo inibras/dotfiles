@@ -1,0 +1,32 @@
+2021/08/27-07:44:17.712 b1d Reusing MANIFEST /home/inibras/.config/google-chrome/Default/Local Extension Settings/cfhdojbkjhnklbpkdaibdccddilifddb/MANIFEST-000001
+2021/08/27-07:44:17.713 b1d Recovering log #985
+2021/08/27-07:44:17.713 b1d Reusing old log /home/inibras/.config/google-chrome/Default/Local Extension Settings/cfhdojbkjhnklbpkdaibdccddilifddb/000985.log 
+2021/08/27-07:45:21.013 b00 Level-0 table #991: started
+2021/08/27-07:45:21.114 b00 Level-0 table #991: 7172185 bytes OK
+2021/08/27-07:45:21.117 b00 Delete type=0 #985
+2021/08/27-07:45:22.621 af8 Level-0 table #993: started
+2021/08/27-07:45:22.728 af8 Level-0 table #993: 7172114 bytes OK
+2021/08/27-07:45:22.732 af8 Delete type=0 #990
+2021/08/27-07:45:24.252 b00 Level-0 table #995: started
+2021/08/27-07:45:24.365 b00 Level-0 table #995: 7157511 bytes OK
+2021/08/27-07:45:24.370 b00 Delete type=0 #992
+2021/08/27-07:45:28.779 af8 Level-0 table #997: started
+2021/08/27-07:45:28.891 af8 Level-0 table #997: 7094963 bytes OK
+2021/08/27-07:45:28.894 af8 Delete type=0 #994
+2021/08/27-07:45:28.897 af8 Compacting 4@0 + 2@1 files
+2021/08/27-07:45:29.054 af8 Generated table #998@0: 1 keys, 7094746 bytes
+2021/08/27-07:45:29.058 af8 Generated table #999@0: 5 keys, 503 bytes
+2021/08/27-07:45:29.058 af8 Compacted 4@0 + 2@1 files => 7095249 bytes
+2021/08/27-07:45:29.061 af8 compacted to: files[ 0 2 1 0 0 0 0 ]
+2021/08/27-07:45:29.061 af8 Delete type=2 #997
+2021/08/27-07:45:29.061 af8 Delete type=2 #995
+2021/08/27-07:45:29.061 af8 Delete type=2 #988
+2021/08/27-07:45:29.061 af8 Delete type=2 #987
+2021/08/27-07:45:29.061 af8 Delete type=2 #991
+2021/08/27-07:45:29.061 af8 Delete type=2 #993
+2021/08/27-07:45:31.791 b00 Level-0 table #1001: started
+2021/08/27-07:45:31.886 b00 Level-0 table #1001: 7241370 bytes OK
+2021/08/27-07:45:31.892 b00 Delete type=0 #996
+2021/08/27-07:45:41.844 af8 Level-0 table #1003: started
+2021/08/27-07:45:41.977 af8 Level-0 table #1003: 7241176 bytes OK
+2021/08/27-07:45:41.980 af8 Delete type=0 #1000

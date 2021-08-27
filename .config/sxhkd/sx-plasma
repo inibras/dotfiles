@@ -1,0 +1,142 @@
+#########################################################
+###  ####  #    # #    # #    # #####  #####   ####   ###
+### #       #  #  #    # #   #  #    # #    # #    #  ###
+###  ####    ##   ###### ####   #    # #    # #       ###
+###      #   ##   #    # #  #   #    # #####  #       ###
+###      #  #  #  #    # #   #  #    # #   #  #    #  ###
+###  ####  #    # #    # #    # #####  #    #  ####   ###
+#########################################################
+
+
+##############
+# Media keys #
+##############
+## MPV_Playlist Menu
+alt + y
+        $HOME/bin/rofi_mpvtube
+
+## Volume control
+#XF86Audio{RaiseVolume,LowerVolume,Mute}
+#	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}
+	
+## Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+# Volume
+#{XF86AudioMute,XF86AudioLowerVolume,XF86AudioRaiseVolume}
+#	pamixer -q set Master {toggle,10%- unmute,10%+ unmute}
+
+XF86AudioMute
+	pamixer --toggle-mute
+XF86AudioLowerVolume
+	pamixer -d 5
+XF86AudioRaiseVolume
+	pamixer -i 5
+
+# Player
+{XF86AudioPrev,XF86AudioPlay,XF86AudioNext}
+	playerctl {previous,play-pause,next}
+
+# Brightness
+XF86MonBrightnessUp
+    light -A 5
+
+XF86MonBrightnessDown
+     light -U 5
+
+
+# Screenshot 
+# maim soft
+{_,ctrl + ,alt + }Print
+	 $HOME/.scripts/shotify
+#scrot {_,-s,-i $(xdotool getactivewindow)} --noopengl \
+#| xclip -selection clipboard -t image/png -i && \
+#notify-send -t 1000 "Sceenshot" "Copied to clipboard"
+shift + {_,ctrl + ,alt + }Print
+         $HOME/.config/rofi/scripts/screenshot.sh   
+#mkdir -p $HOME/Pictures/Screenshots/ && \
+#    scrot {_,-s,-i $(xdotool getactivewindow)} --noopengl \
+#        $HOME/Pictures/Screenshots/$(date +screenshot-%Y%m%d-%H%M%S.png) && \
+#        notify-send -t 1000 "Sceenshot" "Saved in ~/Pictures/Screenshots"
+#Rofi-Emoji Select
+super + Delete
+	$HOME/bin/rofi-emoji
+################
+# Quick launch #
+################
+
+# Run command #
+## Make sxhkd reload its configuration files
+ctrl + super + s
+	pkill -USR1 -x sxhkd
+
+## Show now-playing
+ctrl + super + m
+	notify-send "Now Playing ♫" "$(mpc current)"
+
+
+###############
+#  Drun/Rofir #
+###############
+alt + d
+    $HOME/.scripts/rofi_top
+super + d
+    $HOME/.scripts/rofia
+# run rofi
+super + space
+    $HOME/.scripts/rofic
+
+
+# FileManager
+super + {_,shift + }e
+    thunar
+##############
+#   Record   #
+##############
+alt + r
+	$HOME/.scripts/dmenurecord
+
+alt + w
+	$HOME/.scripts/webcam
+
+alt + s
+	killall ffmpeg 
+
+###########
+#  Ranger #
+###########
+super + r
+	urxvt -e ranger
+
+# Terminal
+super + Return
+	urxvt
+# Terminal
+ctrl + alt + t
+	konsole
+
+# Web browser
+super + {_,shift + }w
+	google-chrome-stable
+#chromium {_, --incognito}
+
+# Virtual machine manager
+#super + {_,shift + }v
+#	rofi-wifi-menu.sh
+#    {$HOME/.config/dmenu/scripts/dmenu-vbox,virtualbox}
+# Translator
+super + {_,shift + }g
+    $HOME/.config/dmenu/scripts/dmenu-trans
+# {en:ind,_}
+
+# Power menu
+# Rebootq
+ctrl + alt + r
+    loginctl reboot
+# Power menu
+super + Escape
+   loginctl poweroff
+
+
+

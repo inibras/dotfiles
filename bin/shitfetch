@@ -1,0 +1,60 @@
+#!/bin/sh
+## Getting Username & Hostname
+get_title() {
+  user=$(id -un)
+  host=$(hostname)
+  }
+
+## Getting OS
+get_pkgmanager() {
+  for manager in xbps-query pacman-key rpm dpkg kiss yum crux bonsai guix ; do
+    if command -v "${manager}" > /dev/null; then 
+      break
+    fi
+  done
+
+}
+
+## Packages
+get_packages() {
+  get_pkgmanager
+  case "${manager}" in
+    "dpkg") os="Debian" ; pkg=$(dpkg -l | wc -l) ;;
+    "rpm") os="Red Hat Linux" ; pkg=$(rpm -qa | wc -l) ;;
+    "kiss") os="Kiss Linux" ; pkg=$(kiss l | wc -l) ;;
+    "xbps-query") os="Void Linux" ; pkg=$(xbps-query -l | wc -l) ;;
+    "pacman-key") os="Arch Linux" ; pkg=$(pacman -Qq | wc -l) ;;
+    "yum") os="Fedora Linux" ; pkg=$(yum list installed | wc -l) ;;
+    "crux") os="Crux Linux" ; pkg=$(pkginfo -i | wc -l) ;;
+    "bonsai") os="Bonsai Linux" ; pkg=$(bonsai list | wc -l) ;;
+    "guix") os="GUIX System" ; pkg=$(guix package --list-installed | wc -l) ;;
+    *) os=$(. /etc/os-release) && os="${PRETTY_NAME}" ; pkg="N/A"
+  esac
+  case $PATH in 
+    */bedrock/cross/*) os='Bedrock Linux' ; pkg="N/A"
+  esac
+    
+}
+## Window Manager
+get_wm() {
+  wm="$(xprop -id $(xprop -root -notype | grep "_NET_SUPPORTING_WM_CHECK:" | cut -d '#' -f 2) | grep "_NET_WM_NAME" | cut -d '"' -f 2)"
+}
+
+get_shell() {
+  shell="${SHELL##*/}"
+}
+
+main() {
+get_title && get_packages && get_wm && get_shell
+
+[ "${@}" ] && printf '\033[32m' && cat "${@}"
+
+printf '\033[33m%s@%s\n' "${user}" "${host}"
+printf '\033[31mos: \033[36m%s\n' "${os}"
+printf '\033[31mshell: \033[36m%s\n' "${shell}"
+printf '\033[31mwm: \033[36m%s\n' "${wm}"
+printf '\033[31mpkgs: \033[36m%s\n' "${pkg}"
+printf '\033[41m   \033[42m   \033[43m   \033[44m   \033[45m   \033[46m   \033[47m   ' 
+printf '\033[0m\n'
+}
+main "${@}"

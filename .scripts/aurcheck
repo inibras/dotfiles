@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Syncs repositories and downloads updates, meant to be run as a cronjob.
+
+ping -q -c 1 1.1.1.1 > /dev/null || exit
+
+notify-send "📦 Repository Sync" "Checking for package updates..."
+#alias putz="notify-send --urgency=critical --hint=string:x-dunst-stack-tag:update 'Starting Update' && sudo reflector -c 'Indonesia' --age 24 --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist && trizen -Syua --noconfirm && notify-send --urgency=critical --hint=string:x-dunst-stack-tag:update 'Update Finished'"
+sudo reflector -c 'Indonesia' --age 24 --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist && trizen -Syua --noconfirm || notify-send "Error downloading updates.
+
+Check your internet connection, if pacman is already running, or run update manually to see errors."
+#pkill -RTMIN+8 "${STATUSBAR:?}"
+
+if trizen -Su --aur --quiet | wc -l
+then
+	notify-send "🎁 Repository Sync" "Updates available. Click statusbar icon (📦) for update."
+else
+	notify-send "📦 AUR Repository Sync"  "Sync complete. No new packages for update."
+fi

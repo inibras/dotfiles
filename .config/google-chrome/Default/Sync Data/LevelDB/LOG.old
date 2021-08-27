@@ -1,0 +1,6 @@
+2021/08/27-07:44:17.213 af5 Reusing MANIFEST /home/inibras/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
+2021/08/27-07:44:17.213 af5 Recovering log #127
+2021/08/27-07:44:17.214 af5 Reusing old log /home/inibras/.config/google-chrome/Default/Sync Data/LevelDB/000127.log 
+2021/08/27-07:52:14.947 af8 Level-0 table #131: started
+2021/08/27-07:52:14.954 af8 Level-0 table #131: 121269 bytes OK
+2021/08/27-07:52:14.957 af8 Delete type=0 #127

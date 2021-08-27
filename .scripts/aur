@@ -1,0 +1,10 @@
+#!/bin/sh
+
+printf "Beginning upgrade.\\n"
+
+yay -Syua --noconfirm
+
+
+printf "\\nUpgrade complete.\\nPress <Enter> to the terminal.\\n\\n"
+read -r
+notify-send "📦 AUR Repository Sync"  "Sync complete. No new packages for update."

@@ -1,0 +1,44 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+# ---
+export PATH="${PATH}:$HOME/.scripts"
+
+#------Source-Scripts
+pkill -f "sxhkd"; sxhkd -c ~/.config/sxhkd/bspwm.conf &
+pkill -f "dunst"; dunst -config ~/.config/dunst/dunstrc &
+killall picom
+#---
+xrdb ~/.Xresources
+# Start Compositor
+#picom -b &> /dev/null
+picom --config $HOME/.config/picom/picom.conf -b &
+sxhkd -c ~/.config/sxhkd/bspwm.conf &
+# Start Polybar
+bash -c ~/.config/polybar/launch.sh &
+# Start Tint2 Panel
+tint2 -c /home/inibras/.config/tint2/tint2rc &
+
+# Set background image
+#(sleep 1; nitrogen --restore) &
+sleep 0.55s && wal -i ~/Pictures/WP/movies.jpeg &
+# GNOME PolicyKit authentication
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# Network manager applet
+#(sleep 5; nm-applet) &
+
+# Bluetooth manager applet
+# (sleep 5; blueman-applet) &
+
+#sleep 0.55s && $HOME/.scripts/random-schemes.sh & #Color scheme
+dunst &			# dunst for notifications
+#xautolock -time 10 -corners ---- -locker i3lock-fancy & #Locker
+xsetroot -cursor_name left_ptr & #Start mouse
+sleep 0.55s && notify-send -i $HOME/.config/inibraS.icon "Welcome Back Sarbini" &
+#xset r rate 300 50 &	# Speed xrate up
+#mpd &
+$HOME/.scripts/ccache.sh & #clear cache mpsyt 
+unclutter &		# Remove mouse when idle

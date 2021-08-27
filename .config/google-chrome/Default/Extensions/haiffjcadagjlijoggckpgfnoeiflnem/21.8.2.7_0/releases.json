@@ -1,0 +1,10 @@
+{     
+    "canary": {
+        "percentage": 0,
+        "index": 0
+    },
+    "path": {
+        "current": "https://html5cdn.cloud.com/ReceiverUpdates/Staging/Receiver/HTML5//HTML5Out/src",
+        "optout": "https://html5cdn.cloud.com/ReceiverUpdates/Staging/Receiver/HTML5/<oldVersion>/HTML5Out/src"
+    }
+}

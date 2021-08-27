@@ -1,0 +1,3 @@
+#!/bin/bash
+ln -f -t $HOME/.config/polybar/ $HOME/.config/polybar/MBT/*
+~/.config/polybar/launch.sh

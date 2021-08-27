@@ -1,0 +1,264 @@
+#########################################################
+###  ####  #    # #    # #    # #####  #####   ####   ###
+### #       #  #  #    # #   #  #    # #    # #    #  ###
+###  ####    ##   ###### ####   #    # #    # #       ###
+###      #   ##   #    # #  #   #    # #####  #       ###
+###      #  #  #  #    # #   #  #    # #   #  #    #  ###
+###  ####  #    # #    # #    # #####  #    #  ####   ###
+#########################################################
+
+###########
+# Windows #
+###########
+# graceful exit (calls modified crunchbang exit script)
+# if systemd is in use, need to modify /etc/systemd/logind.conf to ignore power button events
+{XF86PowerOff}
+    /usr/local/bin/bspwm-exit
+# BSPWM HOTKEYS
+
+# quit/restart bspwm
+super + shift + {q,r,l}
+	bspc {quit,wm -r}
+# metu lxqt
+alt + l
+	lxqt-leave
+# Close or kill window
+super + {_,ctrl + }q
+	bspc node -{c,k}
+# Focus or swap window in the current workspace
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+# Focus the given workspace or move window to that workspace
+super + {_,shift + }{1-5}
+	bspc {desktop -f, node -d} '^{1-5}'
+# Focus the next/previous window
+super + {_,shift + }grave
+	bspc node -f {next,prev}.local
+# Focus the last workspace
+super + Tab
+	bspc desktop -f last
+# alternate between the tiled and monocle layout
+super + {_,shift + }f
+	bspc {desktop -l next,node -t fullscreen}
+
+# rotate current node 90 degrees
+super + y
+	bspc node @focused:/ -R 90
+
+
+#############
+# Preselect #
+#############
+
+# Preselect the direction
+super + p ; {h,j,k,l}
+	bspc node -p {west,south,north,east}
+# Cancel the preselection for the focused desktop
+super + p ; c
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+##############
+# Properties #
+##############
+
+## Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Toggle floating
+super + shift + space
+    bspc node -t floating || bspc node -t pseudo_tiled
+
+# Toggle Tiling
+super + {_,shift + }t
+    bspc node -t tiled
+
+# Toggle sticky flag
+super + s
+	bspc node -g sticky
+# Toggle monocle layout
+#super + m
+#    bspc desktop -l next
+# Toggle gaps
+super + shift + d
+	bspc config window_gap {0,15}
+# Increase/descrease gap size
+super { ,+ shift }+ z
+	bspc config window_gap $(($(bspc config window_gap) {+,-} 3))
+
+##############
+# Media keys #
+##############
+## MPV_Playlist Menu
+alt + y
+        $HOME/bin/rofi_mpvtube
+
+## Volume control
+#XF86Audio{RaiseVolume,LowerVolume,Mute}
+#	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}
+	
+## Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+# Volume
+#{XF86AudioMute,XF86AudioLowerVolume,XF86AudioRaiseVolume}
+#	pamixer -q set Master {toggle,10%- unmute,10%+ unmute}
+
+XF86AudioMute
+	pamixer --toggle-mute
+XF86AudioLowerVolume
+	pamixer -d 5
+XF86AudioRaiseVolume
+	pamixer -i 5
+
+# Player
+{XF86AudioPrev,XF86AudioPlay,XF86AudioNext}
+	playerctl {previous,play-pause,next}
+
+# Brightness
+XF86MonBrightnessUp
+    light -A 5
+
+XF86MonBrightnessDown
+     light -U 5
+
+
+# Display or monitor selection
+#super + p
+#	$HOME/.local/bin/displayselect
+# Updating Paman
+#super + u
+#	$HOME/.local/bin/update
+# Screenshot 
+# maim soft
+{_,ctrl + ,alt + }Print
+	 $HOME/.scripts/shotify
+#scrot {_,-s,-i $(xdotool getactivewindow)} --noopengl \
+#| xclip -selection clipboard -t image/png -i && \
+#notify-send -t 1000 "Sceenshot" "Copied to clipboard"
+shift + {_,ctrl + ,alt + }Print
+         $HOME/.config/rofi/scripts/screenshot.sh   
+#mkdir -p $HOME/Pictures/Screenshots/ && \
+#    scrot {_,-s,-i $(xdotool getactivewindow)} --noopengl \
+#        $HOME/Pictures/Screenshots/$(date +screenshot-%Y%m%d-%H%M%S.png) && \
+#        notify-send -t 1000 "Sceenshot" "Saved in ~/Pictures/Screenshots"
+#Rofi-Emoji Select
+super + Delete
+	$HOME/bin/rofi-emoji
+################
+# Quick launch #
+################
+#alt + F2
+#	dmenu_run -i -fn 'Hack Nerd Font:size=10' -p ' Search  ' -nb '#2f343f' -nf '#e7e8eb' -sb '#81A1C1' -sf '#2f343f'
+
+#super + z
+#    clipmenu
+
+## Drawing terminal
+super + shift + Return
+	urdraw
+
+# Run command #
+## Make sxhkd reload its configuration files
+ctrl + super + s
+	pkill -USR1 -x sxhkd
+
+## Show now-playing
+ctrl + super + m
+	notify-send "Now Playing ♫" "$(mpc current)"
+
+## Reload bspwm config
+#super + shift + BackSpace
+#	killall vanela; bspwmrc
+###############
+#  Drun/Rofir #
+###############
+alt + d
+    $HOME/.scripts/rofi_top
+super + d
+    $HOME/.scripts/rofia
+# run rofi
+super + space
+    $HOME/.scripts/rofic
+
+
+# FileManager
+super + {_,shift + }e
+    thunar
+##############
+#   Record   #
+##############
+alt + r
+	$HOME/.scripts/dmenurecord
+
+alt + w
+	$HOME/.scripts/webcam
+
+alt + s
+	killall ffmpeg 
+
+###########
+#  Ranger #
+###########
+super + r
+	urxvt -e ranger
+
+# Terminal
+super + Return
+	urxvt
+# Terminal
+ctrl + alt + t
+	konsole
+
+# Web browser
+super + {_,shift + }w
+	google-chrome-stable
+#chromium {_, --incognito}
+
+# Virtual machine manager
+#super + {_,shift + }v
+#	rofi-wifi-menu.sh
+#    {$HOME/.config/dmenu/scripts/dmenu-vbox,virtualbox}
+# Translator
+super + {_,shift + }g
+    $HOME/.config/dmenu/scripts/dmenu-trans
+# {en:ind,_}
+
+
+# Redshift
+super + n
+    $HOME/.config/redshift/launch 
+# Key bindings list
+super + slash
+    $HOME/.config/dmenu/scripts/dmenu-help
+
+# Power menu
+# Rebootq
+ctrl + alt + r
+    loginctl reboot
+# Power menu
+super + Escape
+   loginctl poweroff
+alt + BackSpace
+    i3lock
+
+# Screenshoot
+#super + c
+#    $HOME/.scripts/shotify
+
+#Rofi-Emoji Select
+alt + Delete
+	$HOME/bin/rofi-emoji
+
+# calculator
+super + 0
+	$HOME/.config/dmenu/scripts/dmenu-calc

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+git clone https://github.com/j-james/bspwm-rounded-corners.git &&
+cd ~/Apps/bspwm-rounded-corners/ && make
+sudo make install clean &&
+sudo apt remove -y lemonbar

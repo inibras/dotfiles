@@ -1,0 +1,7 @@
+2021/06/27-00:02:28.363 199f Reusing MANIFEST /home/inibras/.config/google-chrome/Default/IndexedDB/https_www.liputan6.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/27-00:02:28.363 199f Recovering log #3
+2021/06/27-00:02:28.364 199f Reusing old log /home/inibras/.config/google-chrome/Default/IndexedDB/https_www.liputan6.com_0.indexeddb.leveldb/000003.log 
+2021/06/27-00:03:34.787 19a2 Level-0 table #5: started
+2021/06/27-00:03:34.790 19a2 Level-0 table #5: 7566 bytes OK
+2021/06/27-00:03:34.793 19a2 Delete type=0 #3
+2021/06/27-00:03:34.794 19a2 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

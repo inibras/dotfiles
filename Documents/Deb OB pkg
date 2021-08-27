@@ -1,0 +1,9 @@
+gnome-icon-theme libobrender32v5 libobt2v5 obconf obsession openbox
+libxml2-dev tint2
+lxpolkit lxsession-data
+
+----------------lightdm & gtk-greeter-settings
+desktop-base fonts-quicksand gnome-accessibility-themes gnome-themes-extra
+  gnome-themes-extra-data gtk2-engines-pixbuf liblightdm-gobject-1-0 libplymouth5
+  libxklavier16 lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth
+  plymouth-label

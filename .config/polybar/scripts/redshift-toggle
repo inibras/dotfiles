@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$(pgrep -x redshift)" ]; then
+    redshift &
+else
+    redshift -x
+    killall redshift
+fi

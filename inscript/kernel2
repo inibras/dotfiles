@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -

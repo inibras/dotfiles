@@ -1,0 +1,102 @@
+!  ██╗░░██╗██████╗░███████╗███████╗░██████╗░██╗░░░██╗██████╗░░██████╗███████╗███████╗
+!  ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║░░░██║██╔══██╗██╔════╝██╔════╝██╔════╝
+!  ░╚███╔╝░██████╔╝█████╗░░███████╗██║░░░██║██║░░░██║██████╔╝██║░░░░░█████╗░░███████╗
+!  ░██╔██╗░██╔══██╗██╔══╝░░╚════██║██║░░░██║██║░░░██║██╔══██╗██║░░░░░██╔══╝░░╚════██║
+!  ██╔╝░██╗██║░░██║███████╗███████║╚██████╔╝╚██████╔╝██║░░██║╚██████╗███████╗███████║
+!  ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝░╚═════╝╚══════╝╚══════╝
+
+! URXVT APPEARANCE
+URxvt.font:                      xft:mplus Nerd Font Mono:Bold:size=10:autohint=true,xft:Noto Color Emoji:pixelsize=11:antialias=false,xft:Monospace:size=11:autohint=true
+!URxvt.font:                       xft:mplus nerd font mono:size=10
+URxvt.geometry:                   94x16
+URxvt.letterSpace: -1
+URxvt.internalBorder:             3
+URxvt.cursorBlink:                true
+URxvt.cursorUnderline:            true
+URxvt.saveLines:                  8192
+URxvt.scrollBar:                  false
+URxvt.scrollBar_right:            true
+URxvt.scrollBar_floating:         false
+URxvt.scrollstyle:                plain
+URxvt.scrollWithBuffer:           false
+URxvt.urgentOnBell:               false
+URxvt.depth:                      32
+URxvt.iso14755:                   false
+!URxvt.transparent:          true
+!URxvt.shading:              20
+URxvt.iconFile:                   /home/inibras/.icons/gladient/inibraS.icon
+
+
+! URXVT EXTENSIONS
+URxvt.perl-ext-common:            default,url-select,font-size
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.clipboard.copycmd: xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+URxvt.keysym.M-c:                 perl:clipboard:copy
+URxvt.keysym.M-v:                 perl:clipboard:paste
+URxvt.keysym.M-Escape:            perl:keyboard-select:activate
+URxvt.keysym.M-s:                 perl:keyboard-select:search
+
+! URL Handle
+URxvt.keysym.Control-Shift-U:     url-select:select_next
+URvxt.url-select.button:          2
+!URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/google-chrome-stable   
+URxvt.underlineURLs:  true
+!URxvt.urlButton:      1
+
+! Font Size
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
+
+!ROFI SETUP
+rofi.hide-scrollbar: true
+
+!COLORSCHMES
+! special
+*.foreground:   #ffffff
+*.background:  #1d1f21
+
+*.solid-background: #1d1f21
+*.cursorColor:  #ffffff
+
+*.highlight:    #fb3d66
+
+! black
+*.color0:       #051519
+*.color8:       #323b3e
+
+! red
+*.color1:       #f8818e
+*.color9:       #fb3d66
+
+! green
+*.color2:       #7b9679
+*.color10:      #6d8c63
+
+! yellow
+*.color3:       #bf946b
+*.color11:      #e4cd7b
+
+! blue
+*.color4:       #8b9eb2
+*.color12:      #b0ecee
+
+! magenta
+*.color5:       #796e7f
+*.color13:      #cdafd9
+
+! cyan
+*.color6:       #7b8e93
+*.color14:      #556468
+
+! white
+*.color7:       #b3bec1
+*.color15:      #f7f8f8
+

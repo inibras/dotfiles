@@ -1,0 +1,242 @@
+/*Copyright (c) 2014 Citrix Systems, Inc.
+The materials in this file are protected by copyright and other intellectual property laws.
+Copying and use is permitted only by end users to enable use of Citrix server technology.
+Any other reproduction or use of this file, or any portion of it, is unlicensed.
+In no event may the file be reverse engineered or may copies be made in association with deobfuscation, decompilation or disassembly.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
+
+.fullscreen-pane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    display: none
+}
+
+.scrollable {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+.x-scrollable {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+.web-screen {
+    min-height: 400px;
+    height: auto!important;
+    height: 400px
+}
+
+.vertical-center-outer {
+    display: table;
+    height: calc(100% - 10px);
+    margin: 0 auto
+}
+
+.vertical-center-inner {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.auth-container {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 4px #ccc
+}
+
+.theme-header-bgcolor {
+    background-color: #fff
+}
+
+.logon-logo-container-header {
+    height: 136px;
+    padding-top: 40px;
+}
+
+.web-screen .content-area {
+    padding: 0px 40px 40px 40px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center
+}
+
+.logon-area, .logoff-area {
+    display: table;
+    width: 100%
+}
+
+.logoff-content, .logoff-progress, .logon-area, .activate-plugin-content, .plugin-assistance-content {
+    width: 480px;
+    padding-bottom: 40px
+}
+
+.form-content, .logoff-content {
+    display: table-cell;
+    padding: 0
+}
+
+.form-content {
+    width: 480px
+}
+
+.credentialform {
+    vertical-align: middle;
+    margin: 0;
+    text-align: left
+}
+
+.credentialform {
+    width: 480px
+}
+
+.credentialform .field {
+    clear: both
+}
+
+.credentialform .field .left, .credentialform .field .right {
+    float: none
+}
+
+.authentication-section {
+    background-color: #f9f9f9
+}
+.logon-logo-container {
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-image: url('../resources/images/Workspace.svg');
+    height: 100px;
+    min-width: 175px;
+    display: block
+}
+
+.credentialform label {
+    color: #999;
+    font-size: 17px
+}
+
+.credentialform .error, .credentialform .warning, .credentialform .information, .credentialform .inprogress, .credentialform .confirmation, .credentialform .plain {
+    margin: 8px 0 8px 30px;
+    padding: 4px 0
+}
+
+.credentialform .plain {
+    margin-left: 0
+}
+
+.credentialform .error, .credentialform .warning, .credentialform .information, .credentialform .inprogress, .credentialform .confirmation, .credentialform .plain {
+    vertical-align: middle;
+    text-align: left;
+    position: relative;
+    font-weight: 300
+}
+
+.credentialform .plain {
+    line-height: 26px;
+}
+
+.credentialform .plain {
+    font-size: 14px;
+    color: #333333
+}
+
+.credentialform input[type=url], .credentialform .pseudo-input {
+    box-sizing: border-box;
+    height: 50px;
+    outline: 0;
+    border: 0;
+    background-color: #FFFFFF;
+}
+
+.credentialform input[placeholder] {
+    text-overflow: ellipsis;
+    padding-right: 5px
+}
+
+.credentialform input[type=url], .credentialform span.pseudo-input.show {
+    padding-left: 18px
+}
+
+.credentialform input[type=url], .credentialform .pseudo-input {
+    width: 100%;
+    font-size: 16px;
+    border-color: #999;
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(51,51,51);
+    outline-color: rgb(51,51,51);
+    font-family: "citrixsans","Helvetica Neue", "Helvetica", "Arial", "Sans Serif";
+}
+
+.credentialform .buttonsrow {
+    padding-top: 40px
+}
+
+.buttonscontainer {
+    display: inline-block
+}
+
+.credentialform .buttonscontainer {
+    text-align: center
+}
+
+.credentialform .buttonscontainer {
+    width: 100%
+}
+
+.button {
+    display: inline-block;
+    min-width: 247px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #2071c5;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 2px;
+}
+
+.button.default {
+    background-color: #2071c5;
+}
+
+.button:hover {
+    background-color:  rgb(5, 91, 148);
+}
+
+.button:active{
+	background-color:  rgba(32, 113, 197);
+	color:  rgba(255, 255, 255);
+}
+.button:focus{
+	outline : 2px solid #2071c5;
+    border : 1px solid #FFFFFF;
+}
+
+a, a:visited, a:link, a:hover {
+    text-decoration: none;
+}
+
+.credentialform .button {
+    display: block;
+    min-width: 0
+}
+
+.citrix-logon-logo {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../resources/images/citrix-logo-new.svg");
+    height: 24px;
+    width: 64px;
+    background-size: contain;
+    margin: 0 auto;
+    display: block
+}

@@ -1,0 +1,3 @@
+/usr/local/bin/dwm 
+sleep 0.1
+sh -c /home/inibras/bin/autostart

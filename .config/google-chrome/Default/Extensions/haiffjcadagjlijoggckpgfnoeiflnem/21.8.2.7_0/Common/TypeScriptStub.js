@@ -1,0 +1,1 @@
+var tKong={extends:function(d,b){for(var lU5Wi in b)if(b.hasOwnProperty(lU5Wi))d[lU5Wi]=b[lU5Wi];function kKOif(){this.constructor=d;}d.prototype=b===null?Object.create(b):(kKOif.prototype=b.prototype,new kKOif());}};

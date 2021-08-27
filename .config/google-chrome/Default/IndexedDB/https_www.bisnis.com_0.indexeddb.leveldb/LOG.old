@@ -1,0 +1,7 @@
+2021/06/29-17:15:37.433 9a8 Reusing MANIFEST /home/inibras/.config/google-chrome/Default/IndexedDB/https_www.bisnis.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/29-17:15:37.434 9a8 Recovering log #3
+2021/06/29-17:15:37.434 9a8 Reusing old log /home/inibras/.config/google-chrome/Default/IndexedDB/https_www.bisnis.com_0.indexeddb.leveldb/000003.log 
+2021/06/29-17:26:15.550 c05 Level-0 table #5: started
+2021/06/29-17:26:15.552 c05 Level-0 table #5: 2497 bytes OK
+2021/06/29-17:26:15.555 c05 Delete type=0 #3
+2021/06/29-17:26:15.555 c05 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

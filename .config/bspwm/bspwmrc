@@ -1,0 +1,158 @@
+#!/bin/sh
+##########################################
+### #####   ####  #####  #    # #    # ###
+### #    # #      #    # #    # ##  ## ###
+### #####   ####  #    # #    # # ## # ###
+### #    #      # #####  # ## # #    # ###
+### #    # #    # #      ##  ## #    # ###
+### #####   ####  #      #    # #    # ###
+##########################################
+
+#################
+#   Autostart   #
+#################
+#  Environtment #
+#################
+killall tint2
+killall xfce4-notifyd
+pkill compton
+pkill picom
+pkill sxhkd
+pkill dunst
+pkill dwmbar
+sleep 0.1
+export PATH="${PATH}:$HOME/.scripts"
+export PATH="${PATH}:$HOME/.config/bspwm"
+picom --config $HOME/.config/picom/picom.conf -b &
+#dunst &
+sleep 0.45s && xrdb ~/.Xresources 
+#picom --config $HOME/.config/picom/compton.conf -b &
+$HOME/.scripts/DL_WP_Old.sh & #DL WP Automatic
+#$HOME/.scripts/CRW.sh & #Random WP
+#xcompmgr &		# xcompmgr for transparency
+#fcitx &
+#clipmenud &
+#$HOME/.scripts/random-schemes.sh &
+#$HOME/.scripts/RW.sh &
+#xautolock -time 30 -corners ---- -locker /usr/bin/slimlock
+xsetroot -cursor_name left_ptr &
+conky &
+dunst &
+sleep 0.55s && notify-send -i $HOME/.config/inibraS.icon "Welcome Back Sarbini" &
+wal -i ~/Pictures/WP/index.jpeg
+$HOME/.scripts/ccache.sh & #clear cache mpsyt 
+unclutter &		# Remove mouse when idle
+#----------------------------------------------------------------#
+############### 
+#   Polybar   #
+###############
+sh -c $HOME/.config/polybar/launch.sh &
+#sleep 0.5
+#conky &
+###########
+## Tint2 ##
+###########
+#$HOME/.config/openbox/autostart &
+#sh -c ~/.config/tint2_bspwm/tintart.sh &
+#tint2 -c ~/.config/tint2/UP_right.tint2rc &
+#tint2 -c ~/.config/tint2/tint2rc &
+#----------------------------------------------------------------#
+############################
+#    SXHKD key bindings    #
+############################
+sxhkd &
+#----------------------------------------------------------------#
+####################################
+#  Start polkit agent FLash Drive  #
+####################################
+#/usr/libexec/polkit-gnome-authentication-agent-1 &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/xfce-polkit/xfce-polkit &
+#/usr/lib/udisk2/udisksd &
+#/usr/lib/gvfs-udisks2-volume-monitor &
+#/usr/lib/gvfsd &
+#/usr/lib/gvfsd-fuse /run/user/1000/gvfs -f &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+#sudo $HOME/.config/rclone/modfuse.sh 
+#sleep 0.5
+#sh $HOME/.config/rclone/mb-gdrive.sh &
+#----------------------------------------------------------------#
+#BSPWM configuration
+#################
+#     Tiled     #
+#################
+# Border width
+bspc config border_width 1
+# Gap between windows
+bspc config window_gap  11
+# Windows split ratio
+bspc config split_ratio 0.5
+#################
+#    Monocle    #
+#################
+# Borders 
+bspc config borderless_monocle 		true
+bspc config focused_border_color	\#DBDBDB
+bspc config active_border_color		\#DBDBDB
+bspc config normal_border_color	 	\#FF0000
+bspc config border_radius        10
+#bspc config single_monocle       true
+#bspc config click_to_focus       true
+# Gap
+bspc config gapless_monocle 		true
+bspc config presel_feedback_color	\#bf00f6
+bspc config focus_follows_pointer   	true
+# It looks like these options get overridden by Compton...
+bspc config normal_frame_opacity 0.75
+bspc config focused_frame_opacity 0.75
+bspc config top_padding         35
+bspc config bottom_padding       7
+#bspc config left_padding         2
+#bspc config right_padding        2
+#bspc config focus_by_distance    true
+#bspc config history_aware_focus  false
+#bspc config pointer_modifier mod4
+#bspc config pointer_action1 move
+#bspc config pointer_action2 resize_side
+#bspc config pointer_action3 resize_corner
+#bspc config remove_disabled_monitors true
+#bspc config ignore_ewmh_struts false
+#bspc config honor_size_hints false
+#bspc config merge_overlapping_monitors false
+
+#################
+#   Workspaces  #
+#################
+#Hotkey can be setting on sxhkdrc
+#bspc monitor eDP-1 -d 1 2 3 4 5 6
+bspc monitor -d 1 2 3 4 5 6
+
+#################
+#  Window Rules #
+#################
+bspc rule -a St         	 desktop="^3"
+bspc rule -a Urxvt         	 desktop="^6" follow=on
+bspc rule -a Firefox      	 desktop="^2"
+bspc rule -a Brave-browser 	 desktop="^2"
+bspc rule -a google-chrome-stable    	 desktop="^2" follow=on
+bspc rule -a Evolution   	 desktop="^3"
+bspc rule -a WhatsApp   	 desktop="^3"
+bspc rule -a Thunar     	 desktop="^4" follow=on
+bspc rule -a Pcmanfm      	 desktop="^1" follow=on
+bspc rule -a Ranger       	 desktop="^1" state=floating
+bspc rule -a Gimp 		 desktop="^4" state=floating follow=on
+bspc rule -a Inkscape     	 desktop="^5"
+bspc rule -a Thunderbird 	 desktop="^5"
+#################
+#  Float Rules  #
+#################
+bspc rule -a mpv 		state=floating focus=on
+bspc rule -a Yad 	        state=floating
+bspc rule -a yad-calender=floating
+bspc rule -a Brave-browser 	state=tiled
+bspc rule -a Firefox 	state=tiled
+bspc rule -a Lxappearance	state=floating
+bspc rule -a xdman		state=floating
+bspc rule -a Surf               state=tiled
+bspc rule -a Zathura            state=tiled
+bspc rule -a Xarchiver 		state=pseudo_tiled

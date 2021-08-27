@@ -1,0 +1,11 @@
+#!/bin/bash
+# Screenshot 5s with notification image
+
+# 3s before capture
+sleep 2s && notify-send -i ~/.scripts/AI.png -u low "Take a picture" "please wait a moment ^_^V" &
+
+# Take screenshot
+scrot -d 5 -e 'mv $f ~/Pictures/Capture'
+
+# Completions
+sleep 0.5s && notify-send -i ~/.scripts/AI.png "Complete" "Captured saved in\n<u>`pwd`/Pictures/Capture</u>"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Get Brightness level using brightnessctl
+notify-send -i xbacklight -u low "Brightness" "On Level `xbacklight -get`/100.000"

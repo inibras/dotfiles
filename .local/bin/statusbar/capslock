@@ -1,0 +1,5 @@
+#!/bin/sh
+
+while true;
+do xsetroot -name "🗚:$(xset q | grep -Ei 'Caps Lock:   on' | cut -c22-23)$(xset q | grep -Ei 'Caps Lock:   off' | cut -c22-24)"
+done

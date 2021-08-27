@@ -1,0 +1,33 @@
+#########################
+#| Keybinding | Action |#
+#########################
+# Open Terminal
+ MODKEY + RETURN
+# Dmenu Launcher
+ MODKEY + SHIFT + RETURN
+# Close Windows Active
+MODKEY + q
+# Restart DWM
+MODKEY + SHIFT + r
+# Leave DWM
+MODKEY + SHIFT + q
+# Switch focus to workspace (1-9)
+MODKEY + 1-9
+# Send focused window to workspace (1-9)
+MODKEY + SHIFT + 1-9
+# focus stack +1 (switches focus between windows in the stack
+MODKEY + j
+# focus stack -1 (switches focus between windows in the stack
+MODKEY + k
+# rotate stack +1 (rotates the windows in the stack
+MODKEY + SHIFT + j
+# rotate stack -1 (rotates the windows in the stack
+MODKEY + SHIFT + k
+# setmfact -0.05 (expands size of window
+MODKEY + h
+# setmfact +0.05 (shrinks size of window)
+MODKEY + l
+# focusmon +1 (switches focus next monitors)
+MODKEY + .
+# focusmon -1 (switches focus to prev monitors)
+MODKEY + ,

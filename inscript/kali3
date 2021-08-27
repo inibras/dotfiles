@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wget 'https://archive.kali.org/archive-key.asc'

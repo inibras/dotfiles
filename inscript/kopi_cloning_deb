@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rsync -avxHAXP --exclude '.git*' --exclude 'LICENSE' --exclude '*.md' dotfiles/ ~/

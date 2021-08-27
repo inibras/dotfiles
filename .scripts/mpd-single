@@ -1,0 +1,4 @@
+#!/bin/bash
+# This work only when mpd volume is 100%
+mpc single
+notify-send -u low -i mpd "MPD" "Single `mpc status | grep "single" | awk -F' ' '{print $7}'`"

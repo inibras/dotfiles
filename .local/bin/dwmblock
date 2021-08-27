@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# For dwmstatus
+while true; do
+    xsetroot -name " 祥 $($HOME/.local/bin/upt) | $($HOME/bin/cpu-temp.sh) | $($HOME/.local/bin/battery) |  $($HOME/.local/bin/clock) | $($HOME/.local/bin/volume) | $($HOME/.local/bin/internet) |  inibraS "
+    sleep 1
+done

@@ -1,0 +1,649 @@
+{
+   "AppRemoved": {
+      "description": "The resource to launch no longer exists, is no longer enabled or is no longer visible to current user.",
+      "message": "O recurso que deve ser iniciado não existe mais, não está mais ativado ou não é mais visível para o usuário atual."
+   },
+   "Button_Later": {
+      "description": "Later button for Chrome Workspace app Update Available notification",
+      "message": "Mais tarde"
+   },
+   "Button_Now": {
+      "description": "Now button for Chrome Workspace app Update Available notification",
+      "message": "Agora"
+   },
+   "CRA_restart_message": {
+      "description": "New CRA update Available notification message.",
+      "message": "Reinicie $1 para atualizar.",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "CRA_update_notification": {
+      "description": "New Chrome Workspace app Update Available notification",
+      "message": "Está disponível uma nova versão do $1.",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "CR_config_applied": {
+      "description": "CRA configured using default cr file",
+      "message": "O $app_name$ está agora configurado usando \"$file_name$\"",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         },
+         "file_name": {
+            "content": "$2",
+            "example": "default.cr"
+         }
+      }
+   },
+   "CouldNotConnectToWorkstation": {
+      "description": "The server refused a connection. Currently applies to XenDesktop only.",
+      "message": "O servidor recusou uma conexão. Atualmente, aplica-se apenas ao XenDesktop."
+   },
+   "GCP_error_code_111": {
+      "description": "If printer trying to print to is not found.",
+      "message": "Impressora não encontrada. Selecione outra impressora."
+   },
+   "GCP_error_code_403": {
+      "description": "When the file that is printing to GCP is corrupted.",
+      "message": "Não foi possível converter para PDF."
+   },
+   "GCP_error_code_default": {
+      "description": "Default error string",
+      "message": "O Google Cloud Print não está disponível. Tente novamente mais tarde."
+   },
+   "GCP_no_printer_error": {
+      "description": "If user account does not contain any printer attached his/her GCP this error is shown",
+      "message": "Não há nenhuma impressora configurada no Google Cloud Print. Configure uma agora."
+   },
+   "GeneralAppLaunchError": {
+      "description": "General error that cannot be further specified.",
+      "message": "Erro geral que não pode ser especificado em detalhes."
+   },
+   "NoMoreActiveSessions": {
+      "description": "The user is not allowed any more active sessions. Currently applies to XenDesktop only.",
+      "message": "O usuário não tem mais sessões ativas. Atualmente, aplica-se apenas ao XenDesktop."
+   },
+   "NotLicensed": {
+      "description": "The server does not have the required license to perform the requested activity.",
+      "message": "O servidor não tem a licença necessária para executar a atividade solicitada."
+   },
+   "ResourceError": {
+      "description": "General error that cannot be further specified.",
+      "message": "Erro geral que não pode ser especificado em detalhes."
+   },
+   "Unauthorized": {
+      "description": "The user is not logged in or authorized to access the data.",
+      "message": "O usuário não está conectado ou não está autorizado a acessar os dados."
+   },
+   "UnavailableDesktop": {
+      "description": "No workstations are available to service this request. Currently applies to XenDesktop only.",
+      "message": "Nenhuma estação de trabalho está disponível para atender a esse pedido. Atualmente, aplica-se apenas ao XenDesktop."
+   },
+   "WorkstationInMaintenance": {
+      "description": "The requested workstation is in maintenance mode and cannot be used. Currently applies to XenDesktop only.",
+      "message": "A estação de trabalho solicitada está no modo de manutenção e não pode ser usada. Atualmente, aplica-se apenas ao XenDesktop."
+   },
+   "account": {
+      "description": "Account Setting Heading Name",
+      "message": "Conta"
+   },
+   "account_url": {
+      "description": "Account URL label",
+      "message": "URL da conta"
+   },
+   "add": {
+      "description": "Add",
+      "message": "Adicionar"
+   },
+   "add_google_cloud_printer": {
+      "description": "URL link to add the google cloud printer.",
+      "message": "Adicionar o Google Cloud Printer..."
+   },
+   "add_print_job_to_queue": {
+      "description": "Adding the print job to queue",
+      "message": "Adicionando $print_job_name$ de $session_name$ à fila.",
+      "placeholders": {
+         "print_job_name": {
+            "content": "$1",
+            "example": "Doc1"
+         },
+         "session_name": {
+            "content": "$2",
+            "example": "título da janela da sessão"
+         }
+      }
+   },
+   "add_store": {
+      "description": "Adding store front url",
+      "message": "Deseja adicionar \"$storeName$\" fornecido por \"$sfUrl$\"?",
+      "placeholders": {
+         "sfUrl": {
+            "content": "$2",
+            "example": "\u003Cip address>"
+         },
+         "storeName": {
+            "content": "$1",
+            "example": "\u003Cstore name>"
+         }
+      }
+   },
+   "apply": {
+      "description": "Apply button display value",
+      "message": "Aplicar"
+   },
+   "beaconUnreachable": {
+      "description": "Network is present but beacons are unreachable.",
+      "message": "Não é possível conectar ao servidor. Entre em contato com seu suporte técnico para obter assistência ou verifique o endereço do servidor em Configurações da conta."
+   },
+   "cancel": {
+      "description": "Cancel",
+      "message": "Cancelar"
+   },
+   "ceipSettingsCheckboxLabel": {
+      "description": "ceip settings checkbox label",
+      "message": "Ajude a melhorar o $app_name$ enviando estatísticas de uso anônimas",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "ceipSettingsTitle": {
+      "description": "ceip settings title",
+      "message": "Programa de Aperfeiçoamento da Experiência do Usuário"
+   },
+   "citrix_receiver": {
+      "description": "Citrix Workspace app",
+      "message": "Aplicativo Citrix Workspace"
+   },
+   "citrix_workspace": {
+      "description": "Citrix Workspace for app name, tooltip etc",
+      "message": "Citrix Workspace"
+   },
+   "clientCursorSettingsCheckboxLabel": {
+      "description": "Client cursor settings checkbox label",
+      "message": "Mostrar o cursor assistencial quando o cursor real não estiver visível"
+   },
+   "clientCursorSettingsTitle": {
+      "description": "Client cursor settings title",
+      "message": "Configurações do usuário cliente"
+   },
+   "configure_cra": {
+      "description": "Configure chrome app",
+      "message": "Configurar $app_name$",
+      "placeholders": {
+         "app_name": {
+            "content": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "connect_URL_secure_msg": {
+      "description": "Message saying connection to a StoreFront/Web interface/Gateway url over http",
+      "message": "Esta conexão com \"$store_url$\" não é segura. Você deve prosseguir apenas se confiar nesse servidor. ",
+      "placeholders": {
+         "store_url": {
+            "content": "$1",
+            "example": "\u003Cip address>"
+         }
+      }
+   },
+   "connect_button": {
+      "description": "Connect button display value",
+      "message": "Conectar"
+   },
+   "connect_confirm": {
+      "description": "Confirm message before connecting",
+      "message": "Tem certeza de que deseja conectar?"
+   },
+   "connection_center_app_buttons_title": {
+      "description": "Title for app buttons",
+      "message": "Ação para o aplicativo:"
+   },
+   "connection_center_ctrl_alt_del_button": {
+      "description": "Name for ctrl+alt+del button",
+      "message": "Ctrl+Alt+Del"
+   },
+   "connection_center_description": {
+      "description": "Description of radio buttons in connection center",
+      "message": "Selecione uma sessão ou um aplicativo para executar uma ação:"
+   },
+   "connection_center_devices_button": {
+      "description": "Name for preferences button",
+      "message": "Dispositivos"
+   },
+   "connection_center_disconnect_button": {
+      "description": "Name for disconnect button",
+      "message": "Desconectar"
+   },
+   "connection_center_logoff_button": {
+      "description": "Name for logoff button",
+      "message": "Sair"
+   },
+   "connection_center_session_buttons_title": {
+      "description": "Title for session buttons",
+      "message": "Ação para a sessão:"
+   },
+   "connection_center_terminate_button": {
+      "description": "Name for terminate button",
+      "message": "Terminar"
+   },
+   "connection_center_title": {
+      "description": "Connection Center title message",
+      "message": "Centro de Conexão"
+   },
+   "continue_button": {
+      "description": "Continue button display value",
+      "message": "Continuar"
+   },
+   "cra": {
+      "description": "Full form of cra",
+      "message": "$app_name$ para Chrome",
+      "placeholders": {
+         "app_name": {
+            "content": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "default_printer_list_option": {
+      "description": "Default option shown in the printer list",
+      "message": "Escolher impressora"
+   },
+   "delete_warning": {
+      "description": "Warning before deleting a store",
+      "message": "Você está prestes a excluir a seguinte loja"
+   },
+   "disabled_printer_option": {
+      "description": "Option shown when printer list is disabled.",
+      "message": "Nenhuma impressora configurada"
+   },
+   "done": {
+      "description": "Done button name",
+      "message": "Concluído"
+   },
+   "dpiScalingCheckboxLabel": {
+      "description": "DPI Scaling Checkbox Label",
+      "message": " Dimensione a sessão para monitores com alta proporção de pixels do dispositivo"
+   },
+   "dpiScalingTitle": {
+      "description": "High DPI Scaling title",
+      "message": "Dimensionamento de alto DPI"
+   },
+   "enumerate_res_error": {
+      "description": "Couldn't enumerate resources for the user.",
+      "message": "Não foi possível enumerar recursos para o usuário."
+   },
+   "error": {
+      "description": "Error",
+      "message": "Erro"
+   },
+   "error_app_open": {
+      "description": "Citrix Workspace app could not be opened",
+      "message": "Não foi possível abrir o $app_name$ ",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "error_config_fail": {
+      "description": "Configuration failed msg",
+      "message": "Falha na configuração de $app_name$ com \"$crFile$\"",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         },
+         "crFile": {
+            "content": "$2",
+            "example": "config.cra"
+         }
+      }
+   },
+   "error_config_fail_withError": {
+      "description": "Configuration failed message",
+      "message": "Falha na configuração de $app_name$ com \"$crFile$\", erro: $errorMsg$",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         },
+         "crFile": {
+            "content": "$2",
+            "example": "config.cra"
+         },
+         "errorMsg": {
+            "content": "$3"
+         }
+      }
+   },
+   "error_file_extension": {
+      "description": "Citrix Workspace app not configured to open unknown file extensions",
+      "message": "O $app_name$ não está configurado para abrir o tipo de arquivo $file_type$.",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         },
+         "file_type": {
+            "content": "$2",
+            "example": ".xyz"
+         }
+      }
+   },
+   "error_file_open_gdrive": {
+      "description": "Error message saying files can only be opened from Google drive",
+      "message": "O $app_name$ só pode abrir arquivos do Google Drive.",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "error_help_desk": {
+      "description": "",
+      "message": "Entre em contato com o suporte técnico com as seguintes informações: $1"
+   },
+   "error_incorrect_url": {
+      "description": "",
+      "message": "Não é possível conectar ao servidor. Verifique se o endereço está correto e se você incluiu \"http: //\" ou \"https: //\". Se você ainda não conseguir se conectar, entre em contato com o suporte técnico para obter ajuda."
+   },
+   "error_invalid_url": {
+      "description": "Enter valid URL.",
+      "message": "Insira um URL válido."
+   },
+   "error_launch_generic": {
+      "description": "Citrix Workspace app couldn't launch the session due to the error specified using errorMsg",
+      "message": "$app_name$ não conseguiu iniciar a sessão. Erro: $errorMsg$",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         },
+         "errorMsg": {
+            "content": "$2",
+            "example": "O servidor recusou uma conexão. Atualmente, aplica-se apenas ao XenDesktop."
+         }
+      }
+   },
+   "error_network_conn": {
+      "description": "Network connection error",
+      "message": "Verifique sua conectividade de rede. Não foi possível o acesso a \"$sfUrl$\"",
+      "placeholders": {
+         "sfUrl": {
+            "content": "$1",
+            "example": "\u003Cip address>"
+         }
+      }
+   },
+   "error_notConfigured": {
+      "description": "",
+      "message": "O $app_name$ não está configurado.",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "gatewayAddress": {
+      "description": "Gateway Address",
+      "message": "Endereço do gateway:"
+   },
+   "generalSettings": {
+      "description": "General setting title",
+      "message": "Geral"
+   },
+   "general_setting_note": {
+      "description": "Note about general settings",
+      "message": "Todas as alterações feitas terão efeito após o reinício das sessões."
+   },
+   "genericError": {
+      "description": "Generic error",
+      "message": "Erro genérico:"
+   },
+   "google_cloud_print_option": {
+      "description": "Google cloud print option name",
+      "message": "Google Cloud Print"
+   },
+   "google_cloud_print_option_description": {
+      "description": "Google cloud print option description",
+      "message": "Imprimir em papel usando a impressora em nuvem selecionada."
+   },
+   "high_dpi_disable_notification": {
+      "description": "High dpi scaling disabled notification",
+      "message": "A escala de DPI alto está desabilitada por padrão. Para uma melhor resolução no dispositivo habilitado para Alta DPI, vá para Configurações e assinale a caixa de seleção Escala alta de DPI."
+   },
+   "http_error_code_403": {
+      "description": "When Authentication of user is failed.",
+      "message": "Não foi possível verificar suas credenciais."
+   },
+   "http_error_code_404": {
+      "description": "When GCP server is down.",
+      "message": "O servidor do Google Cloud Print não está disponível. Tente novamente mais tarde."
+   },
+   "http_error_code_413": {
+      "description": "HTTP request size is larger than the size of the request accepted by the GCP server.",
+      "message": "O arquivo é muito grande para imprimir."
+   },
+   "information": {
+      "description": "Information",
+      "message": "Informações"
+   },
+   "internal_error": {
+      "description": "Internal error",
+      "message": "Erro interno"
+   },
+   "multimonitorSettingsCheckboxLabel": {
+      "description": "Multi-monitor settings checkbox label",
+      "message": "Use todos os monitores para estender a exibição"
+   },
+   "multimonitorSettingsTitle": {
+      "description": "Multi-monitor settings title",
+      "message": "Configurações de vários monitores"
+   },
+   "networkUnreachable": {
+      "description": "Network is unavailable.",
+      "message": "Não é possível conectar ao servidor. Verifique sua rede e tente novamente."
+   },
+   "network_error": {
+      "description": "Network error",
+      "message": "Erro de rede"
+   },
+   "new_store": {
+      "description": "Display value of a button to add a new store",
+      "message": "Adicionar uma loja"
+   },
+   "null_callback": {
+      "description": "Callback passed is null",
+      "message": "retorno de chamada = null"
+   },
+   "offlinestatus": {
+      "description": ": When offline is detected and when network goes down. ",
+      "message": "Não é possível conectar à rede. Tente novamente quando sua rede estiver disponível."
+   },
+   "ok_button": {
+      "description": "ok button",
+      "message": "OK"
+   },
+   "one_time_printer_setup_message": {
+      "description": "One time message to user about printer setup.",
+      "message": "Se você desejar imprimir com o Google Cloud Print, poderá configurá-lo em Configurações da Impressora."
+   },
+   "open_PDF_option": {
+      "description": "Open PDF option name",
+      "message": "Imprimir como PDF"
+   },
+   "open_PDF_option_description": {
+      "description": "Open PDF option description",
+      "message": "Salvar um PDF do seu documento no seu dispositivo. Você pode revisar seu documento antes de imprimir."
+   },
+   "policy_applied_config_fail": {
+      "description": "CR configuration failure message when admin has configured using google policies",
+      "message": "Você não pode alterar essa configuração $app_name$. O administrador está utilizando políticas para configurar $app_name$ para você.",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Aplicativo Citrix Workspace"
+         }
+      }
+   },
+   "printed_file_to_GCP": {
+      "description": "Printed the file to printer",
+      "message": "$print_job_name$ impresso em $printer_name$",
+      "placeholders": {
+         "print_job_name": {
+            "content": "$1",
+            "example": "Doc1"
+         },
+         "printer_name": {
+            "content": "$2",
+            "example": "nome da impressora"
+         }
+      }
+   },
+   "printer": {
+      "description": "Printer Setting Heading Name",
+      "message": "Impressora"
+   },
+   "printer_setting_description": {
+      "description": "Printer Setting description",
+      "message": "Selecione uma opção de impressão padrão."
+   },
+   "printing_support_warning_message": {
+      "description": "Warning message about printer setup in VDA",
+      "message": "Para que a impressão funcione, o administrador de TI deve instalar o driver de impressora Citrix PDF."
+   },
+   "receiverVersionNumber": {
+      "description": "chrome Workspace app version",
+      "message": "Versão $rx_version$",
+      "placeholders": {
+         "rx_version": {
+            "content": "$1",
+            "example": "2.5.2.312"
+         }
+      }
+   },
+   "reload_store_main": {
+      "description": "Tooltip for reload store page",
+      "message": "Recarregar a loja"
+   },
+   "restart_now": {
+      "description": "Restart Citrix Workspace app button text",
+      "message": "Reiniciar agora"
+   },
+   "seamless_multimonitor_drop_here": {
+      "description": "Text displayed when moving seamless apps to different monitor",
+      "message": "Arraste e solte aqui para mover a sessão para este monitor"
+   },
+   "secureMsg_preference": {
+      "description": "To hide the secure connection dialog automatically from next launch onwards",
+      "message": "Não mostrar novamente"
+   },
+   "sendFeedback": {
+      "description": "Send Feedback link text in Account settings",
+      "message": "Enviar feedback"
+   },
+   "settings": {
+      "description": "Settings button display value",
+      "message": "Configurações"
+   },
+   "settings_main": {
+      "description": "Tool tip for account settings",
+      "message": "Configurações"
+   },
+   "store": {
+      "description": "StoreFront/Web interface/Gateway",
+      "message": "Loja"
+   },
+   "storeAddress": {
+      "description": "Store Address",
+      "message": "Endereço de $store$:",
+      "placeholders": {
+         "store": {
+            "content": "$1",
+            "example": "Loja"
+         }
+      }
+   },
+   "storeName": {
+      "description": "Store Name",
+      "message": "Nome do $store$:",
+      "placeholders": {
+         "store": {
+            "content": "$1",
+            "example": "Loja"
+         }
+      }
+   },
+   "storeUnreachable": {
+      "description": "When network and beacon are reachable but store urls are unreachable",
+      "message": "Não é possível conectar ao servidor. Entre em contato com seu suporte técnico para obter assistência ou verifique o endereço do servidor em Configurações da conta."
+   },
+   "store_address": {
+      "description": "Store address label",
+      "message": "Endereço de $store$",
+      "placeholders": {
+         "store": {
+            "content": "$1",
+            "example": "Loja"
+         }
+      }
+   },
+   "store_address_change": {
+      "description": "When the store address is changed in account settings page",
+      "message": "O endereço do servidor foi alterado."
+   },
+   "store_settings_change": {
+      "description": "Changing store url in settings page",
+      "message": "As configurações de $store$ serão aplicadas depois de você fechar todas as janelas e reiniciar $app_name$.",
+      "placeholders": {
+         "app_name": {
+            "content": "$2",
+            "example": "Aplicativo Citrix Workspace"
+         },
+         "store": {
+            "content": "$1",
+            "example": "Loja"
+         }
+      }
+   },
+   "store_to_delete": {
+      "description": "store to be deleted from multi store dropdown",
+      "message": "$store_url$",
+      "placeholders": {
+         "store_url": {
+            "content": "$1",
+            "example": "URL do StoreFront"
+         }
+      }
+   },
+   "switch": {
+      "description": "Switch button display value",
+      "message": "Alternar"
+   },
+   "thirdPartyLicenses": {
+      "description": "Chrome third party notices link",
+      "message": "Aviso para terceiros do aplicativo Citrix Workspace para Chrome"
+   },
+   "unauthorized_user_error": {
+      "description": "User is not logged in or authorized to access the data.",
+      "message": "O usuário não está conectado ou não está autorizado a acessar os dados."
+   },
+   "urlPlaceholder": {
+      "description": "Watermark for URL field in Preferences page",
+      "message": "https://URL"
+   }
+}

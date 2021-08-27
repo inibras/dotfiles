@@ -1,0 +1,864 @@
+;==============================================================================;
+;									       ;
+;									       ;
+;  ########:::'#######::'##:::::::'##:::'##:'########:::::'###::::'########::  ;
+;  ##.... ##:'##.... ##: ##:::::::. ##:'##:: ##.... ##:::'## ##::: ##.... ##:  ;
+;  ##:::: ##: ##:::: ##: ##::::::::. ####::: ##:::: ##::'##:. ##:: ##:::: ##:  ;
+;  ########:: ##:::: ##: ##:::::::::. ##:::: ########::'##:::. ##: ########::  ;
+;  ##.....::: ##:::: ##: ##:::::::::: ##:::: ##.... ##: #########: ##.. ##:::  ;
+;  ##:::::::: ##:::: ##: ##:::::::::: ##:::: ##:::: ##: ##.... ##: ##::. ##::  ;
+;  ##::::::::. #######:: ########:::: ##:::: ########:: ##:::: ##: ##:::. ##:  ;
+;.::::::::::.......:::........:::::..:::::........:::..:::::..::..:::::..::::..;
+;                              CBM V.3 Gray LTS                                ;
+;                                                                              ;
+;   To learn more about how to configure Polybar                               ;
+;   go to https://github.com/jaagr/polybar                                     ;
+;                                                                              ;
+;                                                                              ;
+;==============================================================================;
+################################################################################
+[colors]
+#pink = #B22466
+background = #333941
+#background_ijot = #466052
+#background = #222b2e
+#background_coklat = #A88A65
+#background_biru = #10245E
+#background_hitam = #212326
+#background_pink = #954656
+foreground = #eeeeee
+transparent = #00000000
+red        = #e25252
+blue       = #5294e2
+teal       = #16a085
+green      = #87b158
+ijo	   = #00FF00
+ijt	   = #16a085
+purple     = #7e57c2
+orange     = #ee923a
+indigo     = #5c6bc0
+black      = #4f4f4f
+white      = #e4e4e4
+yellow     = #e2b322
+brown      = #ae8e6c
+shade4 = #1e2430
+shadefg = #ffffff
+shadeoc = #888888
+shadebl = #145cff
+shadeem = #666666
+;;Active BG
+shadebg = #1e2430
+;;Color Active
+shadepp = #bf00f6AA
+shaderd = #ff0000
+
+[margin]
+for-modules = 1
+
+################################################################################
+################################################################################
+############                        BAR TOP                         ############
+################################################################################
+################################################################################
+[bar/top]
+; Size
+width  = 98%
+height = 27
+
+wm-restack=bspwm
+
+; Offset
+offset-x = 1%
+offset-y = 7
+
+; Position
+bottom = false
+
+; Value used for drawing rounded corners
+radius-top = 7
+radius-bottom = 7
+
+; Align modules fixed to middle
+fixed-center = true
+
+; Colors
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; Underline
+line-size  = 2
+line-color = ${colors.foreground}
+
+; Border
+border-size  = 0
+border-color = ${colors.black}
+
+; Padding
+padding-left  = 0
+padding-right = 0
+
+; Margin of modules
+module-margin-left  = 0
+module-margin-right = 0
+
+; Font
+font-0 = "mononoki Nerd Font:size=9.1;2"
+font-1 = "Material Icons:size=12:antialias=true;3"
+font-2 = Iosevka Medium:pixelsize=9;1:antialias=true;2
+font-3 = Fira Code:style=Bold:size=10;3
+font-4 = Font Awesome 5 Free Solid:size=12;3
+font-5 = Typicons:size=16;2
+
+; Modules
+;modules-left  = thunar termite firefox vscode gimp
+modules-left   = bspwm pisah pisah pisah pisah pisah pisah title
+modules-center = date popup-calendar
+modules-right  = uptime separator wlan separator battery separator cpu separator temperature separator pulseaudio pmenu
+
+; Cursor actions
+cursor-click  = pointer
+cursor-scroll = ns-resize
+
+
+
+################################################################################
+################################################################################
+############                        BAR BOTTOM                      ############
+################################################################################
+[bar/bottom]
+; Size
+width  = 100%
+height = 22
+
+wm-restack=bspwm
+
+; Offset
+;offset-x = 50%
+;offset-y = 50%
+
+; Position
+bottom = false
+
+; Radius
+radius = 0
+
+; Align modules fixed to middle
+fixed-center = true
+
+; Colors
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+
+
+; Underline
+line-size  = 2
+line-color = ${colors.foreground}
+
+; Border
+border-size  = 0
+border-color = ${colors.black}
+
+; Padding
+padding-left  = 3
+padding-right = 2
+
+; Margin of modules
+module-margin-left  = 10
+module-margin-right = 0
+
+; Font MB-Config
+;font-0 = mononoki Nerd Font:size=10;2
+;font-1 = Fira Code:style=Bold:size=10;3
+;font-2 = Font Awesome 5 Free Solid:size=12;3
+;font-3 = Typicons:size=16;2
+
+; Font Asli
+font-0 = Fira Code:style=Bold:size=10;3
+font-1 = Font Awesome 5 Free Solid:size=12;3
+font-2 = mononoki Nerd Font:size=10;2
+font-3 = Typicons:size=16;2
+
+; Modlues
+modules-left   = title
+modules-center = mpd
+modules-right  = info-redshift-temp pisah filesystem
+;;;modules-right  = lock logout reboot poweroff
+
+; Cursor actions
+cursor-click  = pointer
+cursor-scroll = ns-resize
+################################################################################
+################################################################################
+############                       MODULE BSPWM                     ############
+################################################################################
+################################################################################
+[module/bspwm]
+type = internal/bspwm
+;;workspace
+;http://fontawesome.io/cheatsheet/
+format = <label-state> <label-mode>
+label-default = %icon%
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-default = 
+;##
+;;label if active
+label-focused = %icon%
+label-focused-foreground = ${colors.shadepp}
+#label-focused-background = ${colors.transparent}
+;;;label-focused-overline = ${colors.shadepp}
+label-focused-underline = ${colors.shadepp}
+;;label if used
+label-occupied = %icon%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
+;;;label-occupied-overline = ${colors.shadebl}
+label-occupied-underline = ${colors.red}
+;;label if not used
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background}
+label-empty-underline = ${colors.yellow}
+;;Separator
+;;;label-separator = " "
+;;;label-separator-foreground = ${colors.shade1}
+;;;label-separator-background = ${colors.shade1}
+label-focused-padding = 2
+label-occupied-padding = 2
+label-empty-padding = 2
+################################################################################
+############                       MODULE From Scripts                ############
+################################################################################
+################################ Pkg Update ####################################
+[module/pkg]
+type = custom/script
+exec = bash ~/.config/polybar/checkupdates.sh
+format-padding = 1
+;format-margin = ${margin.for-modules}
+click-left = kitty zsh ~/.config/polybar/updates.sh
+interval = 3600
+;;;format-foreground = ${color.itm}
+;;;format-background = ${color.ijo}
+;;=--=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-
+################################################################################
+############                       MODULE redshift                  ############
+################################################################################
+[module/info-redshift-temp]
+type = custom/script
+exec = $HOME/.scripts/info-redshift-temp.sh
+interval = 1
+padding = 2
+################################################################################
+############                       MODULE MPD                       ############
+################################################################################
+[module/mpd]
+type = internal/mpd
+;expand-right = false
+format-online =  <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+;;;format-online =   <toggle>  <label-song>
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-random = 
+icon-repeat = 
+icon-single = 
+label-time = %elapsed% / %total%
+;label-time =
+;
+label-song = 𝄞 %artist% - %title%
+label-song-maxlen = 50
+label-song-ellipsis = true
+label-offline =  mpd offline
+toggle-on-foreground =
+toggle-off-foreground = #55
+bar-progress-width = 10
+bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+bar-progress-indicator = |
+bar-progress-indicator-foreground = ${colors.white}
+bar-progress-indicator-font = 6
+bar-progress-fill = ─
+bar-progress-fill-foreground = ${colors.white}
+bar-progress-fill-font = 6
+bar-progress-empty = ─
+bar-progress-empty-font = 6
+bar-progress-empty-foreground = #44
+;;;================================================================================;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; i3 Module ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;================================================================================;;;
+[module/i3]
+type = internal/i3
+
+; Mouse click
+enable-click = true
+
+; Mouse scroll
+enable-scroll = false
+
+; Sort
+index-sort = true
+
+; Display icons
+fuzzy-match = true
+
+; Icons
+ws-icon-0       = Main;
+ws-icon-1       = Terminal;
+ws-icon-2       = Web;
+ws-icon-3       = Program;
+ws-icon-4       = Other;
+ws-icon-default = 
+
+; Focused label
+label-focused            = %icon%
+label-focused-background = ${colors.teal}
+label-focused-foreground = ${colors.foreground}
+label-focused-padding    = 2
+
+; Unfocused labels
+label-unfocused            = %icon%
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-padding    = 2
+
+; Visible labels
+label-visible            = %icon%
+label-visible-foreground = ${colors.foreground}
+label-visible-padding    = 2
+
+; Urgent labels
+label-urgent            = %icon%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding    = 2
+
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+[module/title]
+type = internal/xwindow
+label = %title:0:75:...%
+label-empty = No Pain No Gain
+format-foreground = ${colors.foreground}
+label-empty-foreground = ${colors.foreground}
+label-maxlen = 35%
+
+
+;~~~~~~~~~;
+; Battery ;
+;~~~~~~~~~;
+[module/battery]
+type = internal/battery
+; Use $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = AC
+full-at = 98
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+label-charging-foreground = ${colors.foreground}
+#format-charging-background = ${colors.ijo}
+format-charging-padding    = 1
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.foreground}
+#format-discharging-background = ${colors.brown}
+format-discharging-padding    = 1
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+format-background = ${colors.indigo}
+format-padding    = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-2-foreground = ${colors.yellow}
+ramp-capacity-3-foreground = ${colors.yellow}
+ramp-capacity-4-foreground = ${colors.foreground}
+ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-padding    = 1
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-padding    = 1
+animation-charging-framerate = 750
+
+
+[module/temperature]
+type = internal/temperature
+
+; Label
+label            =  %temperature%
+#label-background = ${colors.orange}
+label-foreground = ${colors.foreground}
+label-padding    = 2
+
+; Warning label
+label-warn            =  %temperature%
+label-warn-background = ${colors.red}
+label-warn-foreground = ${colors.foreground}
+label-warn-padding    = 2
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Volume label
+label-volume            =  %percentage%%
+#label-volume-background = ${colors.blue}
+label-volume-foreground = ${colors.foreground}
+label-volume-padding    = 2
+
+; Muted label
+label-muted            =  Muted
+label-muted-background = ${colors.red}
+label-muted-foreground = ${colors.foreground}
+label-muted-padding    = 2
+################################################################################
+##############                     MODULE UPTIME            ############
+################################################################################
+[module/uptime]
+type = custom/script
+exec = ~/.local/bin/upt
+interval = 30
+format-prefix = "祥 "
+;format-prefix-font = 4
+;format-prefix = " "
+label-foreground = ${colors.foreground}
+################################################################################
+###################                     MODULE CPU            ##################
+################################################################################
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-padding = 2
+format-foreground = ${colors.foreground}
+label = %percentage%%
+################################################################################
+##############                     MODULE POPUP CALENDAR            ############
+################################################################################
+[module/popup-calendar]
+type = custom/script
+exec = echo " ";
+interval = 5
+click-left = _popup-calendar.sh --popup &
+;format-prefix = " "
+;format-prefix-font = 4
+;format-prefix = " "
+label-foreground = ${colors.foreground}
+################################################################################
+############                       MODULE DATE                      ############
+################################################################################
+[module/date]
+type = internal/date
+interval = 1.0
+date = "%b %d, %Y"
+; date-alt = " %a %b %d, %Y"
+time = %H:%M%
+time-alt = %b %d, %Y
+;format-prefix = " "
+;format-prefix-foreground = ${color.lg}
+;format-foreground = ${color.lg}
+label =  %time%
+label-foreground = ${colors.foreground}
+label-padding    = 1
+;label-maxlen = 40%
+
+################################################################################
+############                  MODULE POWER MENU                     ############
+################################################################################
+[module/pmenu]
+type = custom/menu
+expand-right = false
+label-active-font = 3
+label-open = ⏻
+label-open-foreground = ${colors.foreground}
+label-open-background = ${colors.red}
+label-open-padding = 1
+label-close = 
+label-close-foreground = ${colors.blue}
+label-close-background = ${colors.brown}
+label-close-padding = 1
+menu-0-3 = 
+menu-0-3-foreground = ${colors.ijo}
+menu-0-3-background = ${colors.teal}
+menu-0-3-padding = 1
+menu-0-3-exec = i3lock-fancy
+menu-0-2 = 
+menu-0-2-foreground = ${colors.foreground}
+menu-0-2-background = ${colors.purple}
+menu-0-2-padding = 1
+menu-0-2-exec = bspc quit &
+menu-0-1 = 
+menu-0-1-foreground = ${colors.yellow}
+menu-0-1-background = ${colors.purple}
+menu-0-1-padding = 1
+menu-0-1-exec = systemctl reboot
+menu-0-0 = ⏻
+menu-0-0-foreground = ${colors.red}
+menu-0-0-background = ${colors.white}
+menu-0-0-padding = 1
+menu-0-0-exec = systemctl poweroff
+
+################################################################################
+############                       MODULE MAIL                      ############
+################################################################################
+[module/gmail]
+type = custom/script
+interval = 30
+format = <label>
+format-prefix = ""
+label-padding = 1
+exec = ~/.config/polybar/gmail.py
+tail = true
+click-left = xdg-open https://mail.google.com
+
+################################################################################
+############                    MODULE FILE SYSTEM                  ############
+################################################################################
+[module/filesystem]
+;https://github.com/jaagr/polybar/wiki/Module:-filesystem
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /home
+;mount-1 = /home
+label-0 = R
+;label-1 = D
+; Seconds to sleep between updates
+; Default: 30
+interval = 30
+
+;[module/filesystem]
+;type = internal/fs
+;mount-0 = /
+;mount-1 = /media/platte
+
+
+
+; Display fixed precision values
+; Default: false
+fixed-values = false
+
+; Spacing between entries
+; Default: 2
+spacing = 2
+right-margin = 3
+
+format-mounted = <label-mounted>
+label-mounted = %{F#0a81f5}%{F-} : %used%/%total%
+; Available tags:
+;   <label-mounted> (default)
+;   <bar-free>
+;   <bar-used>
+;   <ramp-capacity>
+;format-mounted = <label-mounted>
+;format-mounted-foreground = ${colors.foreground}
+;format-mounted-background = ${colors.transparent}
+;;;format-mounted-underline = #fe0000
+
+
+; Available tokens:
+;   %mountpoint%
+;   %type%
+;   %fsname%
+;   %percentage_free%
+;   %percentage_used%
+;   %total%
+;   %free%
+;   %used%
+; Default: %mountpoint% %percentage_free%%
+;label-mounted = %mountpoint% : %used%/%total%
+
+; Available tokens:
+;   %mountpoint%
+; Default: %mountpoint% is not mounted
+;label-unmounted = %mountpoint% not mounted
+;format-unmounted-foreground = ${colors.foreground}
+;format-unmounted-background = ${colors.background}
+;format-unmounted-underline = ${colors.alert}
+
+
+[module/pisah]
+; Pemisah
+type = custom/text
+;content = "❷"
+conten-padding = 10
+content = "%{T4}█%{T-}"
+content-font = 12
+content-foreground = ${colors.background}
+content-background = ${colors.background}
+
+
+[module/separator]
+; Pemisah
+type = custom/text
+;content = "❷"
+conten-padding = 2
+content = |
+#content = "%{T4} %{T-}"
+content-font = 2
+content-foreground = ${colors.foreground}
+
+
+[module/lock]
+type = custom/text
+
+; Label
+content = 
+content-background = ${colors.teal}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = slock
+
+[module/logout]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.purple}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = bspc quit
+
+[module/reboot]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.blue}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = systemctl reboot
+
+[module/poweroff]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.red}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = systemctl poweroff
+
+[module/firefox]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.orange}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = firefox &
+
+[module/vscode]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.purple}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = code &
+
+[module/gimp]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.brown}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = gimp &
+
+[module/termite]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.teal}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = urxvt &
+
+[module/thunar]
+type = custom/text
+
+; Label
+content            = 
+content-background = ${colors.red}
+content-foreground = ${colors.foreground}
+content-padding    = 2
+
+; Mouse click
+click-left = Thunar&
+;;;================================================================================;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Network Module ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;================================================================================;;;
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 0.1
+
+;;; Label - Connected
+;format-connected = <label-connected>
+format-connected = %{A3:$HOME/.scripts/rofi-wifi-menu.sh:}<label-connected>%{A}
+format-connected-padding = 1
+label-connected =   %essid%
+#label-connected =   %essid%  %upspeed:6%  %downspeed:6%
+#label-connected-background = ${colors.green}
+label-connected-foreground = ${colors.foreground}
+label-connected-padding    = 2
+#label-connected =  %upspeed:9%  %downspeed:9%
+
+;;; Label - Disconnected
+format-disconnected = %{A3:$HOME/.scripts/rofi-wifi-menu.sh:}<label-disconnected>%{A}
+;;;format-disconnected = <label-disconnected>
+;format-disconnected-padding = 1
+label-disconnected = 睊 Offline
+label-disconnected-background = ${colors.red}
+label-disconnected-foreground = ${colors.foreground}
+label-disconnected-padding    = 2
+
+[module/wired-network]
+type = internal/network
+interface = enp0s25
+;;;interface = ${env:WIRED}
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %{F#000000} %{F-}%local_ip%
+label-disconnected = %{F#84A0C6} %{F-}disconnected
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.green}
+
+
+[settings]
+;compositing-background = xor
+;compositing-foreground = source
+;compositing-border     = over
+;pseudo-transparency    = false
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = true
+
+; Compositing operators
+; @see: https://www.cairographics.org/manual/cairo-cairo-t.html#cairo-operator-t
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+; Enables pseudo-transparency for the bar
+pseudo-transparency = true
+
+[module/workspaces]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = true
+
+; icon-[0-9]+ = <desktop-name>;<icon>
+; NOTE: The desktop name needs to match the name configured by the WM
+; You can get a list of the defined desktops using:
+; $ xprop -root _NET_DESKTOP_NAMES
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-default = 
+
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
+; Default: <label-state>
+format = <label-state>
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-active = 
+label-active-foreground = ${color.foreground-alt}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-occupied = 
+label-occupied-foreground = ${color.foreground-alt}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = 
+label-urgent-foreground = ${color.shade2}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = 
+label-empty-foreground = ${color.foreground-alt}
+
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
+
+[global/wm]
+margin-top    = 5
+margin-bottom = 5

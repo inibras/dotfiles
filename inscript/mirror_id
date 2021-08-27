@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.old &&
+sudo cp $HOME/Apps/dotfiles/inscript/sources.list /etc/apt/ &&
+sudo apt update

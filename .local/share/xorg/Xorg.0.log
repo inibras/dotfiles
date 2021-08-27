@@ -1,0 +1,353 @@
+[    21.669] 
+X.Org X Server 1.20.11
+X Protocol Version 11, Revision 0
+[    21.669] Build Operating System: linux Debian
+[    21.669] Current Operating System: Linux MB-Deb 5.10.0-7-amd64 #1 SMP Debian 5.10.40-1 (2021-05-28) x86_64
+[    21.669] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.10.0-7-amd64 root=UUID=472f3de4-ceef-4a01-b24b-3f4f80774d74 ro quiet
+[    21.669] Build Date: 13 April 2021  04:07:31PM
+[    21.669] xorg-server 2:1.20.11-1 (https://www.debian.org/support) 
+[    21.669] Current version of pixman: 0.40.0
+[    21.669] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[    21.669] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[    21.671] (==) Log file: "/home/inibras/.local/share/xorg/Xorg.0.log", Time: Sun Jul 11 21:09:37 2021
+[    21.673] (==) Using config file: "/etc/X11/xorg.conf"
+[    21.674] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[    21.675] (==) No Layout section.  Using the first Screen section.
+[    21.675] (==) No screen section available. Using defaults.
+[    21.675] (**) |-->Screen "Default Screen Section" (0)
+[    21.675] (**) |   |-->Monitor "<default monitor>"
+[    21.676] (==) No device specified for screen "Default Screen Section".
+	Using the first device section listed.
+[    21.676] (**) |   |-->Device "Card0"
+[    21.676] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[    21.676] (==) Automatically adding devices
+[    21.676] (==) Automatically enabling devices
+[    21.676] (==) Automatically adding GPU devices
+[    21.676] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[    21.677] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[    21.677] 	Entry deleted from font path.
+[    21.679] (==) FontPath set to:
+	/usr/share/fonts/X11/misc,
+	/usr/share/fonts/X11/100dpi/:unscaled,
+	/usr/share/fonts/X11/75dpi/:unscaled,
+	/usr/share/fonts/X11/Type1,
+	/usr/share/fonts/X11/100dpi,
+	/usr/share/fonts/X11/75dpi,
+	built-ins
+[    21.679] (==) ModulePath set to "/usr/lib/xorg/modules"
+[    21.679] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[    21.679] (II) Loader magic: 0x5609b1728e40
+[    21.679] (II) Module ABI versions:
+[    21.679] 	X.Org ANSI C Emulation: 0.4
+[    21.679] 	X.Org Video Driver: 24.1
+[    21.679] 	X.Org XInput driver : 24.1
+[    21.679] 	X.Org Server Extension : 10.0
+[    21.680] (++) using VT number 1
+
+[    21.682] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[    21.683] (II) xfree86: Adding drm device (/dev/dri/card0)
+[    21.683] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 13 paused 0
+[    21.685] (--) PCI:*(0@0:2:0) 8086:1616:17aa:2226 rev 9, Mem @ 0xf0000000/16777216, 0xe0000000/268435456, I/O @ 0x00003000/64, BIOS @ 0x????????/131072
+[    21.685] (II) LoadModule: "glx"
+[    21.686] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[    21.692] (II) Module glx: vendor="X.Org Foundation"
+[    21.692] 	compiled for 1.20.11, module version = 1.0.0
+[    21.692] 	ABI class: X.Org Server Extension, version 10.0
+[    21.692] (II) LoadModule: "intel"
+[    21.692] (II) Loading /usr/lib/xorg/modules/drivers/intel_drv.so
+[    21.695] (II) Module intel: vendor="X.Org Foundation"
+[    21.695] 	compiled for 1.20.9, module version = 2.99.917
+[    21.695] 	Module class: X.Org Video Driver
+[    21.695] 	ABI class: X.Org Video Driver, version 24.1
+[    21.695] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[    21.695] (II) intel: Driver for Intel(R) HD Graphics
+[    21.695] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[    21.695] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[    21.695] xf86EnableIOPorts: failed to set IOPL for I/O (Operation not permitted)
+[    21.696] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20200917
+[    21.696] (II) intel(0): SNA compiled: xserver-xorg-video-intel 2:2.99.917+git20200714-1+b1 (amd64 / i386 Build Daemon (x86-csail-01) <buildd_amd64-x86-csail-01@buildd.debian.org>)
+[    21.696] (II) intel(0): SNA compiled for use with valgrind
+[    21.714] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[    21.715] (--) intel(0): Integrated Graphics Chipset: Intel(R) HD Graphics 5500
+[    21.715] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3, sse4.1, sse4.2, avx, avx2; using a maximum of 2 threads
+[    21.715] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[    21.715] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[    21.715] (==) intel(0): RGB weight 888
+[    21.715] (==) intel(0): Default visual is TrueColor
+[    21.715] (**) intel(0): Option "Backlight" "intel_backlight"
+[    21.716] (II) intel(0): Output eDP1 has no monitor section
+[    21.722] (**) intel(0): Found backlight control interface intel_backlight (type 'raw') for output eDP1
+[    21.722] (II) intel(0): Enabled output eDP1
+[    21.722] (II) intel(0): Output DP1 has no monitor section
+[    21.722] (II) intel(0): Enabled output DP1
+[    21.722] (II) intel(0): Output HDMI1 has no monitor section
+[    21.722] (II) intel(0): Enabled output HDMI1
+[    21.722] (II) intel(0): Output DP2 has no monitor section
+[    21.722] (II) intel(0): Enabled output DP2
+[    21.722] (II) intel(0): Output HDMI2 has no monitor section
+[    21.723] (II) intel(0): Enabled output HDMI2
+[    21.723] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[    21.723] (II) intel(0): Output VIRTUAL1 has no monitor section
+[    21.723] (II) intel(0): Enabled output VIRTUAL1
+[    21.723] (--) intel(0): Output eDP1 using initial mode 1366x768 on pipe 0
+[    21.723] (==) intel(0): TearFree disabled
+[    21.723] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[    21.723] (==) intel(0): DPI set to (96, 96)
+[    21.723] (II) Loading sub module "dri3"
+[    21.723] (II) LoadModule: "dri3"
+[    21.723] (II) Module "dri3" already built-in
+[    21.723] (II) Loading sub module "dri2"
+[    21.723] (II) LoadModule: "dri2"
+[    21.723] (II) Module "dri2" already built-in
+[    21.723] (II) Loading sub module "present"
+[    21.723] (II) LoadModule: "present"
+[    21.723] (II) Module "present" already built-in
+[    21.725] (II) intel(0): SNA initialized with Broadwell (gen8) backend
+[    21.725] (==) intel(0): Backing store enabled
+[    21.725] (==) intel(0): Silken mouse enabled
+[    21.726] (II) intel(0): HW Cursor enabled
+[    21.727] (==) intel(0): DPMS enabled
+[    21.727] (==) intel(0): Display hotplug detection enabled
+[    21.727] (II) intel(0): [DRI2] Setup complete
+[    21.727] (II) intel(0): [DRI2]   DRI driver: i965
+[    21.727] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[    21.727] (II) intel(0): direct rendering: DRI2 enabled
+[    21.727] (II) intel(0): hardware support for Present enabled
+[    21.727] (II) Initializing extension Generic Event Extension
+[    21.727] (II) Initializing extension SHAPE
+[    21.727] (II) Initializing extension MIT-SHM
+[    21.728] (II) Initializing extension XInputExtension
+[    21.728] (II) Initializing extension XTEST
+[    21.728] (II) Initializing extension BIG-REQUESTS
+[    21.728] (II) Initializing extension SYNC
+[    21.728] (II) Initializing extension XKEYBOARD
+[    21.729] (II) Initializing extension XC-MISC
+[    21.729] (II) Initializing extension SECURITY
+[    21.729] (II) Initializing extension XFIXES
+[    21.729] (II) Initializing extension RENDER
+[    21.729] (II) Initializing extension RANDR
+[    21.729] (II) Initializing extension COMPOSITE
+[    21.729] (II) Initializing extension DAMAGE
+[    21.729] (II) Initializing extension MIT-SCREEN-SAVER
+[    21.729] (II) Initializing extension DOUBLE-BUFFER
+[    21.730] (II) Initializing extension RECORD
+[    21.730] (II) Initializing extension DPMS
+[    21.730] (II) Initializing extension Present
+[    21.730] (II) Initializing extension DRI3
+[    21.730] (II) Initializing extension X-Resource
+[    21.730] (II) Initializing extension XVideo
+[    21.730] (II) Initializing extension XVideo-MotionCompensation
+[    21.730] (II) Initializing extension SELinux
+[    21.730] (II) SELinux: Disabled on system
+[    21.730] (II) Initializing extension GLX
+[    21.758] (II) AIGLX: Loaded and initialized i965
+[    21.758] (II) GLX: Initialized DRI2 GL provider for screen 0
+[    21.758] (II) Initializing extension XFree86-VidModeExtension
+[    21.758] (II) Initializing extension XFree86-DGA
+[    21.759] (II) Initializing extension XFree86-DRI
+[    21.759] (II) Initializing extension DRI2
+[    21.764] (II) intel(0): switch to mode 1366x768@60.0 on eDP1 using pipe 0, position (0, 0), rotation normal, reflection none
+[    21.774] (II) intel(0): Setting screen physical size to 361 x 203
+[    21.822] (II) config/udev: Adding input device Power Button (/dev/input/event3)
+[    21.823] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[    21.823] (II) LoadModule: "libinput"
+[    21.823] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[    21.826] (II) Module libinput: vendor="X.Org Foundation"
+[    21.826] 	compiled for 1.20.8, module version = 0.30.0
+[    21.826] 	Module class: X.Org XInput Driver
+[    21.826] 	ABI class: X.Org XInput driver, version 24.1
+[    21.826] (II) Using input driver 'libinput' for 'Power Button'
+[    21.827] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 25 paused 0
+[    21.827] (**) Power Button: always reports core events
+[    21.827] (**) Option "Device" "/dev/input/event3"
+[    21.827] (**) Option "_source" "server/udev"
+[    21.831] (II) event3  - Power Button: is tagged by udev as: Keyboard
+[    21.831] (II) event3  - Power Button: device is a keyboard
+[    21.831] (II) event3  - Power Button: device removed
+[    21.831] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input5/event3"
+[    21.831] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[    21.831] (**) Option "xkb_model" "pc105"
+[    21.831] (**) Option "xkb_layout" "us"
+[    21.832] (II) event3  - Power Button: is tagged by udev as: Keyboard
+[    21.832] (II) event3  - Power Button: device is a keyboard
+[    21.833] (II) config/udev: Adding input device Video Bus (/dev/input/event8)
+[    21.833] (**) Video Bus: Applying InputClass "libinput keyboard catchall"
+[    21.833] (II) Using input driver 'libinput' for 'Video Bus'
+[    21.833] (II) systemd-logind: got fd for /dev/input/event8 13:72 fd 28 paused 0
+[    21.833] (**) Video Bus: always reports core events
+[    21.833] (**) Option "Device" "/dev/input/event8"
+[    21.834] (**) Option "_source" "server/udev"
+[    21.835] (II) event8  - Video Bus: is tagged by udev as: Keyboard
+[    21.835] (II) event8  - Video Bus: device is a keyboard
+[    21.835] (II) event8  - Video Bus: device removed
+[    21.835] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input16/event8"
+[    21.835] (II) XINPUT: Adding extended input device "Video Bus" (type: KEYBOARD, id 7)
+[    21.835] (**) Option "xkb_model" "pc105"
+[    21.835] (**) Option "xkb_layout" "us"
+[    21.836] (II) event8  - Video Bus: is tagged by udev as: Keyboard
+[    21.836] (II) event8  - Video Bus: device is a keyboard
+[    21.836] (II) config/udev: Adding input device Lid Switch (/dev/input/event1)
+[    21.836] (II) No input driver specified, ignoring this device.
+[    21.836] (II) This device may have been added with another device file.
+[    21.837] (II) config/udev: Adding input device Sleep Button (/dev/input/event2)
+[    21.837] (**) Sleep Button: Applying InputClass "libinput keyboard catchall"
+[    21.837] (II) Using input driver 'libinput' for 'Sleep Button'
+[    21.837] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 29 paused 0
+[    21.837] (**) Sleep Button: always reports core events
+[    21.837] (**) Option "Device" "/dev/input/event2"
+[    21.837] (**) Option "_source" "server/udev"
+[    21.838] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[    21.838] (II) event2  - Sleep Button: device is a keyboard
+[    21.839] (II) event2  - Sleep Button: device removed
+[    21.839] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input4/event2"
+[    21.839] (II) XINPUT: Adding extended input device "Sleep Button" (type: KEYBOARD, id 8)
+[    21.839] (**) Option "xkb_model" "pc105"
+[    21.839] (**) Option "xkb_layout" "us"
+[    21.839] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[    21.840] (II) event2  - Sleep Button: device is a keyboard
+[    21.840] (II) config/udev: Adding input device HDA Intel HDMI HDMI/DP,pcm=3 (/dev/input/event15)
+[    21.840] (II) No input driver specified, ignoring this device.
+[    21.840] (II) This device may have been added with another device file.
+[    21.841] (II) config/udev: Adding input device HDA Intel HDMI HDMI/DP,pcm=7 (/dev/input/event16)
+[    21.841] (II) No input driver specified, ignoring this device.
+[    21.841] (II) This device may have been added with another device file.
+[    21.841] (II) config/udev: Adding input device HDA Intel HDMI HDMI/DP,pcm=8 (/dev/input/event17)
+[    21.841] (II) No input driver specified, ignoring this device.
+[    21.841] (II) This device may have been added with another device file.
+[    21.841] (II) config/udev: Adding input device HDA Intel HDMI HDMI/DP,pcm=9 (/dev/input/event18)
+[    21.841] (II) No input driver specified, ignoring this device.
+[    21.841] (II) This device may have been added with another device file.
+[    21.842] (II) config/udev: Adding input device HDA Intel HDMI HDMI/DP,pcm=10 (/dev/input/event19)
+[    21.842] (II) No input driver specified, ignoring this device.
+[    21.842] (II) This device may have been added with another device file.
+[    21.842] (II) config/udev: Adding input device Integrated Camera: Integrated C (/dev/input/event6)
+[    21.842] (**) Integrated Camera: Integrated C: Applying InputClass "libinput keyboard catchall"
+[    21.842] (II) Using input driver 'libinput' for 'Integrated Camera: Integrated C'
+[    21.843] (II) systemd-logind: got fd for /dev/input/event6 13:70 fd 30 paused 0
+[    21.843] (**) Integrated Camera: Integrated C: always reports core events
+[    21.843] (**) Option "Device" "/dev/input/event6"
+[    21.843] (**) Option "_source" "server/udev"
+[    21.844] (II) event6  - Integrated Camera: Integrated C: is tagged by udev as: Keyboard
+[    21.844] (II) event6  - Integrated Camera: Integrated C: device is a keyboard
+[    21.845] (II) event6  - Integrated Camera: Integrated C: device removed
+[    21.845] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb2/2-8/2-8:1.0/input/input9/event6"
+[    21.845] (II) XINPUT: Adding extended input device "Integrated Camera: Integrated C" (type: KEYBOARD, id 9)
+[    21.845] (**) Option "xkb_model" "pc105"
+[    21.845] (**) Option "xkb_layout" "us"
+[    21.846] (II) event6  - Integrated Camera: Integrated C: is tagged by udev as: Keyboard
+[    21.846] (II) event6  - Integrated Camera: Integrated C: device is a keyboard
+[    21.846] (II) config/udev: Adding input device HDA Digital PCBeep (/dev/input/event9)
+[    21.846] (II) No input driver specified, ignoring this device.
+[    21.846] (II) This device may have been added with another device file.
+[    21.847] (II) config/udev: Adding input device HDA Intel PCH Dock Mic (/dev/input/event10)
+[    21.847] (II) No input driver specified, ignoring this device.
+[    21.847] (II) This device may have been added with another device file.
+[    21.847] (II) config/udev: Adding input device HDA Intel PCH Mic (/dev/input/event11)
+[    21.847] (II) No input driver specified, ignoring this device.
+[    21.847] (II) This device may have been added with another device file.
+[    21.847] (II) config/udev: Adding input device HDA Intel PCH Dock Headphone (/dev/input/event12)
+[    21.847] (II) No input driver specified, ignoring this device.
+[    21.847] (II) This device may have been added with another device file.
+[    21.847] (II) config/udev: Adding input device HDA Intel PCH Headphone (/dev/input/event13)
+[    21.847] (II) No input driver specified, ignoring this device.
+[    21.847] (II) This device may have been added with another device file.
+[    21.848] (II) config/udev: Adding input device AT Translated Set 2 keyboard (/dev/input/event0)
+[    21.848] (**) AT Translated Set 2 keyboard: Applying InputClass "libinput keyboard catchall"
+[    21.848] (II) Using input driver 'libinput' for 'AT Translated Set 2 keyboard'
+[    21.849] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 31 paused 0
+[    21.849] (**) AT Translated Set 2 keyboard: always reports core events
+[    21.849] (**) Option "Device" "/dev/input/event0"
+[    21.849] (**) Option "_source" "server/udev"
+[    21.850] (II) event0  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[    21.850] (II) event0  - AT Translated Set 2 keyboard: device is a keyboard
+[    21.850] (II) event0  - AT Translated Set 2 keyboard: device removed
+[    21.850] (**) Option "config_info" "udev:/sys/devices/platform/i8042/serio0/input/input0/event0"
+[    21.850] (II) XINPUT: Adding extended input device "AT Translated Set 2 keyboard" (type: KEYBOARD, id 10)
+[    21.850] (**) Option "xkb_model" "pc105"
+[    21.850] (**) Option "xkb_layout" "us"
+[    21.851] (II) event0  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[    21.851] (II) event0  - AT Translated Set 2 keyboard: device is a keyboard
+[    21.852] (II) config/udev: Adding input device PC Speaker (/dev/input/event5)
+[    21.852] (II) No input driver specified, ignoring this device.
+[    21.852] (II) This device may have been added with another device file.
+[    21.853] (II) config/udev: Adding input device ThinkPad Extra Buttons (/dev/input/event4)
+[    21.853] (**) ThinkPad Extra Buttons: Applying InputClass "libinput keyboard catchall"
+[    21.853] (II) Using input driver 'libinput' for 'ThinkPad Extra Buttons'
+[    21.854] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 32 paused 0
+[    21.854] (**) ThinkPad Extra Buttons: always reports core events
+[    21.854] (**) Option "Device" "/dev/input/event4"
+[    21.854] (**) Option "_source" "server/udev"
+[    21.855] (II) event4  - ThinkPad Extra Buttons: is tagged by udev as: Keyboard Switch
+[    21.855] (II) event4  - ThinkPad Extra Buttons: device is a keyboard
+[    21.855] (II) event4  - ThinkPad Extra Buttons: device removed
+[    21.855] (**) Option "config_info" "udev:/sys/devices/platform/thinkpad_acpi/input/input6/event4"
+[    21.855] (II) XINPUT: Adding extended input device "ThinkPad Extra Buttons" (type: KEYBOARD, id 11)
+[    21.855] (**) Option "xkb_model" "pc105"
+[    21.855] (**) Option "xkb_layout" "us"
+[    21.856] (II) event4  - ThinkPad Extra Buttons: is tagged by udev as: Keyboard Switch
+[    21.856] (II) event4  - ThinkPad Extra Buttons: device is a keyboard
+[    21.856] (II) config/udev: Adding input device Synaptics TM3075-002 (/dev/input/event7)
+[    21.856] (**) Synaptics TM3075-002: Applying InputClass "libinput touchpad catchall"
+[    21.856] (II) Using input driver 'libinput' for 'Synaptics TM3075-002'
+[    21.857] (II) systemd-logind: got fd for /dev/input/event7 13:71 fd 33 paused 0
+[    21.857] (**) Synaptics TM3075-002: always reports core events
+[    21.857] (**) Option "Device" "/dev/input/event7"
+[    21.857] (**) Option "_source" "server/udev"
+[    21.858] (II) event7  - Synaptics TM3075-002: is tagged by udev as: Touchpad
+[    21.859] (II) event7  - Synaptics TM3075-002: device is a touchpad
+[    21.859] (II) event7  - Synaptics TM3075-002: device removed
+[    21.860] (**) Option "config_info" "udev:/sys/devices/rmi4-00/input/input8/event7"
+[    21.860] (II) XINPUT: Adding extended input device "Synaptics TM3075-002" (type: TOUCHPAD, id 12)
+[    21.860] (**) Option "AccelerationScheme" "none"
+[    21.860] (**) Synaptics TM3075-002: (accel) selected scheme none/0
+[    21.860] (**) Synaptics TM3075-002: (accel) acceleration factor: 2.000
+[    21.860] (**) Synaptics TM3075-002: (accel) acceleration threshold: 4
+[    21.861] (II) event7  - Synaptics TM3075-002: is tagged by udev as: Touchpad
+[    21.862] (II) event7  - Synaptics TM3075-002: device is a touchpad
+[    21.863] (II) config/udev: Adding input device Synaptics TM3075-002 (/dev/input/mouse0)
+[    21.863] (II) No input driver specified, ignoring this device.
+[    21.863] (II) This device may have been added with another device file.
+[    21.863] (II) config/udev: Adding input device TPPS/2 IBM TrackPoint (/dev/input/event14)
+[    21.863] (**) TPPS/2 IBM TrackPoint: Applying InputClass "libinput pointer catchall"
+[    21.863] (II) Using input driver 'libinput' for 'TPPS/2 IBM TrackPoint'
+[    21.864] (II) systemd-logind: got fd for /dev/input/event14 13:78 fd 34 paused 0
+[    21.864] (**) TPPS/2 IBM TrackPoint: always reports core events
+[    21.864] (**) Option "Device" "/dev/input/event14"
+[    21.864] (**) Option "_source" "server/udev"
+[    21.865] (II) event14 - TPPS/2 IBM TrackPoint: is tagged by udev as: Mouse Pointingstick
+[    21.865] (II) event14 - TPPS/2 IBM TrackPoint: device is a pointer
+[    21.866] (II) event14 - TPPS/2 IBM TrackPoint: device removed
+[    21.866] (**) Option "config_info" "udev:/sys/devices/rmi4-00/rmi4-00.fn03/serio2/input/input10/event14"
+[    21.866] (II) XINPUT: Adding extended input device "TPPS/2 IBM TrackPoint" (type: MOUSE, id 13)
+[    21.866] (**) Option "AccelerationScheme" "none"
+[    21.866] (**) TPPS/2 IBM TrackPoint: (accel) selected scheme none/0
+[    21.866] (**) TPPS/2 IBM TrackPoint: (accel) acceleration factor: 2.000
+[    21.866] (**) TPPS/2 IBM TrackPoint: (accel) acceleration threshold: 4
+[    21.867] (II) event14 - TPPS/2 IBM TrackPoint: is tagged by udev as: Mouse Pointingstick
+[    21.868] (II) event14 - TPPS/2 IBM TrackPoint: device is a pointer
+[    21.869] (II) config/udev: Adding input device TPPS/2 IBM TrackPoint (/dev/input/mouse1)
+[    21.869] (II) No input driver specified, ignoring this device.
+[    21.869] (II) This device may have been added with another device file.
+[    21.902] (II) intel(0): EDID vendor "AUO", prod id 4204
+[    21.902] (II) intel(0): Printing DDC gathered Modelines:
+[    21.902] (II) intel(0): Modeline "1366x768"x0.0   75.60  1366 1404 1426 1592  768 771 777 790 -hsync -vsync (47.5 kHz eP)
+[   749.859] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 14ms, your system is too slow
+[   754.617] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 11ms, your system is too slow
+[  3980.219] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 24ms, your system is too slow
+[  4149.474] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 25ms, your system is too slow
+[  4572.661] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 13ms, your system is too slow
+[  4575.173] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 11ms, your system is too slow
+[  4620.808] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 12ms, your system is too slow
+[  4622.139] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 23ms, your system is too slow
+[  4682.214] (EE) event7  - Synaptics TM3075-002: client bug: event processing lagging behind by 23ms, your system is too slow
+[  4682.214] (EE) event7  - Synaptics TM3075-002: WARNING: log rate limit exceeded (5 msgs per 60min). Discarding future messages.

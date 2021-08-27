@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo cp $HOME/Apps/dotfiles/inscript/xorg.conf /etc/X11/

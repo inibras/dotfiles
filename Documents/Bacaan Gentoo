@@ -1,0 +1,563 @@
+The default set of accepted licenses has been changed [1,2] to:
+
+   ACCEPT_LICENSE="-* @FREE"
+
+This means that by default only free software and documentation
+will be installable. The "FREE" license group is defined in the
+profiles/license_groups file in the Gentoo repository. It contains
+licenses that are explicitly approved by the Free Software Foundation,
+the Open Source Initiative, or that follow the Free Software
+Definition.
+
+The system wide default for the accepted licenses is controlled by
+the ACCEPT_LICENSE variable in /etc/portage/make.conf, or it can be
+specified on a per-package basis in /etc/portage/package.license.
+
+For example, to allow the app-arch/unrar and sys-kernel/linux-firmware
+packages to be installed, the following lines would have to be added
+to /etc/portage/package.license:
+
+   app-arch/unrar unRAR
+   sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
+
+A migration tool app-portage/elicense is available. It scans installed
+packages for licenses that are no longer accepted, and generates a list
+in the same format as the package.license file. See elicense's README
+for further details.
+
+If you want to revert to the previous default, add the following line
+to /etc/portage/make.conf:
+
+   ACCEPT_LICENSE="* -@EULA"
+
+This will permit all licenses, except End User License Agreements that
+require reading and signing an acceptance agreement. Note that this
+will also accept non-free software and documentation.
+
+See GLEP 23 [3] as well as the make.conf(5) and portage(5) man pages
+for the detailed syntax of the ACCEPT_LICENSE variable. Further
+information about licenses can be found in the Gentoo Handbook [4]
+and on the license groups wiki page [5].
+
+[1] https://projects.gentoo.org/council/meeting-logs/20190210-summary.txt
+[2] https://bugs.gentoo.org/676248
+[3] https://www.gentoo.org/glep/glep-0023.html
+[4] https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage#Licenses
+[5] https://wiki.gentoo.org/wiki/License_groups
+
+2019-12-30-genkernel-4-default-filenames
+  Title                     Genkernel 4 changed default filenames
+  Author                    Thomas Deutschmann <whissi@gentoo.org>
+  Posted                    2019-12-30
+  Revision                  1
+
+To be consistent with kernel's own naming which allows for easier
+matching of kernel/initramfs with kernel files (/lib/modules),
+genkernel 4 changed default kernel and initramfs filename:
+
+    kernel-genkernel-%%ARCH%%-%%KV%%      -> vmlinuz-%%KV%%
+    System.map-genkernel-%%ARCH%%-%%KV%%  -> System.map-%%KV%%
+    initramfs-genkernel-%%ARCH%%-%%KV%%   -> initramfs-%%KV%%.img
+
+Note that in genkernel 4, filenames are fully customizable and that
+$ARCH value is now part of $KV value by default.
+
+All bootloaders and utilities like sys-apps/kexec-tools available in
+Gentoo repository support the new naming schema.
+
+However, due to lexical ordering, the default boot entry in your boot
+manager could still point to last kernel built with genkernel before
+that name change, resulting in booting old kernel when not paying
+attention on boot.
+
+2020-06-23-upgrade-to-sys-libs_pam-1_4_0
+  Title                     sys-libs/pam-1.4.0 upgrade
+  Author                    Mikle Kolyada <zlogene@gentoo.org>
+  Posted                    2020-06-23
+  Revision                  1
+
+Starting with the 1.4.0 release [1], we don't offer these modules anymore:
+
+* pam_tally and pam_tally2 have been deprecated and replaced
+  by the pam_faillock module
+* pam_cracklib has been deprecated and replaced
+  by the pam_passwdqc module
+
+These changes affected our basic PAM stack configuration.
+
+You only need to take action if:
+* you made manual changes to the PAM stack, or
+* you use FEATURES="-config-protect-if-modified" option
+
+If this applies to you, please make sure to either run the etc-update or
+dispatch-conf command in order to sync your configuration.
+
+Failure to do this may result in your system becoming inaccessible.
+
+[1] - https://github.com/linux-pam/linux-pam/releases/tag/v1.4.0
+
+2020-06-24-xorg-server-dropping-default-suid
+  Title                     xorg-server dropping default suid
+  Author                    Piotr Karbowski <slashbeast@gentoo.org>
+  Posted                    2020-06-24
+  Revision                  3
+
+Starting 2020-07-15, stable keyworded x11-base/xorg-server will default
+to using the logind interface instead of suid by default. resulting in
+better security by default through running the server as a regular user
+instead of root. However, this will require our users to use a logind
+provider such as elogind or systemd. The systemd users and those who are
+not using systemd but use desktop profiles can stop reading here, as
+they already have a logind provider enabled.
+
+Others, who have neither systemd or desktop profiles enabled will be
+required to globally enable 'elogind' USE flag and update the system
+
+    # emerge --newuse @world
+
+Afterwards, one will need to re-login, so the PAM can assign a seat. One
+can confirm that a seat has been assigned upon login by running:
+
+    $ loginctl user-status
+
+Users who do not wish to use logind interface or have rare hardware that
+does not use KMS and because of that, require root privileges to
+operate, can manually re-enable 'suid' and disable 'elogind' USE flags
+in order to preserve the previous behavior. However, please note that
+this is heavily discouraged to run X server as root due to security
+reasons. The 'suid' USE flag will remain as optional opt-in for the need
+of legacy hardware.
+
+2021-01-30-display-manager-init
+  Title                     New OpenRC Display Manager Initializer Scripts
+  Author                    Aisha Tammy <gentoo@aisha.cc>
+  Author                    Andreas Sturmlechner <asturm@gentoo.org>
+  Posted                    2021-01-30
+  Revision                  6
+
+There has been a refactoring of the old 'xdm' init script into a new
+script called 'display-manager', provided by a new package that will
+be introduced by your @world update routine as a dependency of
+x11-base/xorg-server-1.20.10-r1:
+
+	gui-libs/display-manager-init
+
+The package is now in ~arch and will be available to stable users
+starting with 2nd March 2021. [1]
+
+Its purpose is to provide the same startup mechanism for your chosen
+display manager (like GDM, SDDM etc. [2]) as xdm did previously, but
+without depending on x11-base/xorg-server. This is necessary to
+support new DMs that no longer depend on Xorg.
+
+Existing settings from /etc/conf.d/xdm will be migrated to new
+/etc/conf.d/display-manager config, however after installation it is
+vital not to forget to run either `etc-update` or `dispatch-conf`.
+Afterwards check that /etc/conf.d/display-manager contains the
+desired value for DISPLAYMANAGER.
+
+The old 'xdm' init script is no longer supported and henceforth
+removed from x11-base/xorg-server-1.20.10-r1, so it is imperative that
+you switch from xdm to display-manager service in default runlevel:
+
+	# rc-update del xdm default
+	# rc-update add display-manager default
+
+The changes are complete and on the next reboot, 'display-manager'
+will start your chosen DM.
+
+To switch to the new script without rebooting, run the following
+commands in a tty:
+
+	# rc-service xdm stop
+	# rc-service display-manager start
+
+Finally, the following action is necessary *ONLY* if you are running
+	a) a DM (and rest of system) without Xorg
+	b) a DM from an overlay, to make sure display-manager persists
+
+	# emerge --noreplace gui-libs/display-manager-init
+
+
+[1] To make this change *now*, and proceed with this news item already,
+stable users would need to add the following entries to
+/etc/portage/package.accept_keywords [3] and update @world:
+
+	~sys-apps/sysvinit-2.98
+	~x11-apps/xinit-1.4.1
+	~x11-base/xorg-server-1.20.10
+	~gui-libs/display-manager-init-1.0
+
+[2] https://wiki.gentoo.org/wiki/Display_manager
+[3] https://wiki.gentoo.org/wiki//etc/portage/package.accept_keywords
+
+2021-01-30-python-preference-to-follow-python-targets
+  Title                     Python preference to follow PYTHON_TARGETS
+  Author                    Michał Górny <mgorny@gentoo.org>
+  Posted                    2021-01-30
+  Revision                  1
+
+On 2021-02-01 stable users will switch to a new method of updating
+the preferred Python versions that employs the configuration update
+mechanism in order to follow PYTHON_TARGETS.  We will also deprecate
+app-eselect/eselect-python, and it will stop being installed by default
+after 2021-07-01.  If you wish to use the newest Python version present
+in your PYTHON_TARGETS, you only have to accept configuration changes.
+If you wish to customize the behavior, read on.
+
+Since 2017, /usr/bin/python and the related non-versioned symlinks
+are wrapped through dev-lang/python-exec.  The list of preferred Python
+implementations is stored in /etc/python-exec/python-exec.conf and/or
+per-program /etc/python-exec/<basename>.conf configuration files.
+To preserve backwards compatibility, app-eselect/eselect-python remained
+a wrapper that updated this file.
+
+However, this mechanism alone has proven inconvenient to end users who
+had to update python-exec.conf whenever the default PYTHON_TARGETS
+changed.  Thanks to the fallback logic, this was not a major problem
+for software installed via Gentoo packages that always ensure that
+a supported implementation is used.  However, users have reported that
+whenever the preference for /usr/bin/python mismatched their
+PYTHON_TARGETS, their custom scripts would break due to unsatisfied
+dependencies.  This does not follow the principle of least surprise.
+
+For this reason, we have decided to change the default python-exec
+configuration to match PYTHON_TARGETS by default, in the eclass
+preference order, that is from the newest CPython version to oldest,
+with alternative Python implementations coming afterwards.  This change
+will be propagated via the configuration protection mechanism whenever
+dev-lang/python-exec-conf is installed or rebuilt due to PYTHON_TARGETS
+changes.  This will permit the users to interactively confirm
+the updates.
+
+If the new default is not correct for you, please use your preferred
+configuration update tool to discard or edit the new configuration file.
+
+Furthermore, dev-lang/python will no longer attempt to automatically
+update the Python interpreter preference, or pull in eselect-python
+automatically.  If you wish to continue using it, please install/record
+it explicitly to ensure that it is not unmerged, e.g.:
+
+    emerge -n app-eselect/eselect-python
+
+2021-05-05-python3-9
+  Title                     Python 3.9 to become the default on 2021-06-01
+  Author                    Michał Górny <mgorny@gentoo.org>
+  Posted                    2021-05-05
+  Revision                  1
+
+We are planning to switch the default Python target of Gentoo systems
+on 2021-06-01, from Python 3.8 to Python 3.9.  If you have not changed
+the values of PYTHON_TARGETS or PYTHON_SINGLE_TARGET, the change will
+have immediate effect on your system and the package manager will try
+to switch automatically on the next upgrade following the change.
+
+If you did change the values, prefer a safer approach or have problems
+with the update, read on.
+
+Please note that the default upgrade method switches packages to the new
+Python versions as they are rebuilt.  This means that all interdependent
+packages have to support the new version for the upgrade to proceed,
+and that some programs may temporarily fail to find their dependencies
+throughout the upgrade (although programs that are already started
+are unlikely to be affected).
+
+
+If you have PYTHON_TARGETS or PYTHON_SINGLE_TARGET declared
+in make.conf, please remove these declarations as they will interfere
+with the package.use samples provided below.  Using make.conf for Python
+targets is discouraged as it prevents package defaults from applying
+when necessary.  This news item assumes using /etc/portage/package.use
+or your package manager's equivalent file for configuration.
+
+
+At this point, you have a few configuration options to choose from:
+
+1. If you wish Python upgrades to apply automatically, you can remove
+   PYTHON_TARGETS and PYTHON_SINGLE_TARGET declarations.  When
+   the defaults change, your package manager should handle the upgrade
+   automatically.  However, you may still need to run the update
+   commands if any problems arise.
+
+2. If you wish to defer the upgrade for the time being, you can
+   explicitly set the old values in package.use.
+
+3. If you wish to force the upgrade earlier, you can explicitly set
+   the new values and run the upgrade commands.
+
+4. If you wish to use a safer approach (i.e. less likely to temporarily
+   break packages during the upgrade), you can perform a multi-step
+   upgrade as outlined below.
+
+5. Finally, you can use an arbitrary combination of PYTHON_TARGETS
+   and PYTHON_SINGLE_TARGET.
+
+
+Deferring the upgrade
+=====================
+To defer the upgrade, explicitly set the old targets:
+
+    */* PYTHON_TARGETS: -* python3_8
+    */* PYTHON_SINGLE_TARGET: -* python3_8
+
+This will enforce Python 3.8 and block any future updates.  However,
+please note that this solution will only be suitable for a few more
+months and you will eventually need to perform the migration.
+
+
+Forcing the upgrade
+===================
+To force the upgrade earlier, explicitly set Python 3.9 targets:
+
+    */* PYTHON_TARGETS: -* python3_9
+    */* PYTHON_SINGLE_TARGET: -* python3_9
+
+However, it is important to remember to remove this after the defaults
+change, as it will interfere with the automatic switch to the next
+Python version in the future.
+
+
+Safer upgrade procedure
+=======================
+A safer approach is to add Python 3.9 support to your system first,
+and only then remove Python 3.8.  However, note that involves two
+rebuilds of all the affected packages, so it will take noticeably
+longer.
+
+First, enable both Python 3.8 and Python 3.9, and then run the upgrade
+commands:
+
+    */* PYTHON_TARGETS: -* python3_8 python3_9
+    */* PYTHON_SINGLE_TARGET: -* python3_8
+
+Then switch PYTHON_SINGLE_TARGET and run a second batch of upgrades:
+
+    */* PYTHON_TARGETS: -* python3_8 python3_9
+    */* PYTHON_SINGLE_TARGET: -* python3_9
+
+Finally, switch to the final version and upgrade:
+
+    */* PYTHON_TARGETS: -* python3_9
+    */* PYTHON_SINGLE_TARGET: -* python3_9
+
+You may wish to remove the target overrides after the defaults switch.
+Alternatively, you can keep them to block the next automatic upgrade
+to Python 3.10, and upgrade manually then.
+
+
+Upgrade commands
+================
+The Python 3.8 cleanup requires that Python 3.8 is removed from complete
+dependency trees in batch.  If some of the installed packages using
+an older Python version are not triaged for the upgrade, the package
+manager will throw dependency conflicts.  This makes it important that
+the upgrade is carried via a --deep --changed-use @world upgrade,
+as well as that any stray packages are removed prior to it, e.g.:
+
+    emerge --depclean
+    emerge -1vUD @world
+    emerge --depclean
+
+2021-07-15-opentmpfiles-deprecation
+  Title                     systemd-tmpfiles replaces deprecated opentmpfiles
+  Author                    Georgy Yakovlev <gyakovlev@gentoo.org>
+  Author                    Sam James <sam@gentoo.org>
+  Posted                    2021-07-15
+  Revision                  1
+
+A tmpfiles [0] implementation provides a generic mechanism to define
+the creation of regular files, directories, pipes, and device nodes,
+adjustments to their access mode, ownership, attributes, quota
+assignments, and contents, and finally their time-based removal.
+It is commonly used for volatile and temporary files and directories
+such as those located under /run/, /tmp/, /var/tmp/, the API file
+systems such as /sys/ or /proc/, as well as some other directories
+below /var/. [1]
+
+On 2021-07-06, the sys-apps/opentmpfiles package was initially masked
+due to a root privilege escalation vulnerability (CVE-2017-18925 [2],
+bug #751415 [3], issue 4 [4] upstream).
+
+The severity of this vulnerability is disputed due to the practical
+obstacles to its exploitation in any default or supported configuration.
+
+That said, the use of opentmpfiles is discouraged by its maintainer due
+to the unpatched vulnerability and other long-standing bugs [5]. It has
+now been declared obsolete in favour of systemd-tmpfiles by opentmpfiles
+upstream.
+
+Users will start seeing their package manager trying to replace
+sys-apps/opentmpfiles with sys-apps/systemd-tmpfiles because it is
+another provider of virtual/tmpfiles.
+
+Despite the name, 'systemd-tmpfiles' does not depend on systemd, does
+not use dbus, and is just a drop-in replacement for opentmpfiles. It is
+a small binary built from systemd source code, but works separately,
+similarly to eudev or elogind. It is known to work on both glibc and
+musl systems.
+
+Note that systemd-tmpfiles is specifically for non-systemd systems. It
+is intended to be used on an OpenRC system.
+
+If you wish to selectively test systemd-tmpfiles, follow those steps:
+
+ 1. # emerge --oneshot sys-apps/systemd-tmpfiles
+ 2. # reboot
+ 3. # rm /etc/runlevels/boot/opentmpfiles-setup
+ 4. # rm /etc/runlevels/sysinit/opentmpfiles-dev
+
+No other steps required.
+
+If you still wish to use opentmpfiles for the time being, you can unmask [6]
+opentmpfiles:
+ 1. In /etc/portage/package.unmask, add a line:
+ -sys-apps/opentmpfiles-
+ 2. # emerge --oneshot sys-apps/opentmpfiles
+
+Note that opentmpfiles is likely to be removed from gentoo repository
+in the future. You may wish to put it in a local overlay instead [7].
+
+[0] https://www.freedesktop.org/software/systemd/man/systemd-tmpfiles.html
+[1] https://www.freedesktop.org/software/systemd/man/tmpfiles.d.html
+[2] https://nvd.nist.gov/vuln/detail/CVE-2017-18925
+[3] https://bugs.gentoo.org/751415
+[4] https://github.com/OpenRC/opentmpfiles/issues/4
+[5] https://bugs.gentoo.org/741216
+[6] https://wiki.gentoo.org/wiki/Knowledge_Base:Unmasking_a_package
+[7] https://wiki.gentoo.org/wiki/Custom_ebuild_repository#Creating_a_local_repository
+
+2021-07-20-perl-5_34-upgrade
+  Title                     Perl 5.34 upgrade now stable
+  Author                    Sam James <sam@gentoo.org>
+  Posted                    2021-07-20
+  Revision                  1
+
+The Perl project in Gentoo has begun stabilisation of Perl 5.34 [0]
+which is the latest stable version released upstream.
+
+While the package manager usually handles this upgrade cleanly, 
+there are some bugs [1][2][3] which affect Portage's dependency resolution
+that sometimes mean rebuilds occur in the wrong order - this is
+exacerbated by the packaging model used for Perl (but not its fault).
+
+We therefore recommend the following procedure for users:
+1. Sync your tree:
+# emerge --sync
+
+2. Perform a full world upgrade, e.g.:
+# emerge -a -uvDU @world --keep-going=y
+
+3. If any failures occur, please run perl-cleaner --all, then try again:
+# perl-cleaner --all
+
+4. Perform a world upgrade again.
+
+5. Once complete, depclean:
+# emerge -a --depclean
+
+If the upgrade fails with conflicts, please try --backtrack=1000 or some
+other large number.
+
+Rarely, it may be necessary to perform a one-off installation of a package,
+but usually `perl-cleaner` will resolve the issue. If an error message occurs
+after running perl-cleaner, try e.g. for a fictional package dev-perl/foo:
+# emerge -a --oneshot --verbose dev-perl/foo
+
+If you have any issues, please consult the standard support channels [4]
+(such as our forums or IRC channels) and we will do our best to get your
+system working well again.
+
+[0] https://bugs.gentoo.org/802639
+[1] https://bugs.gentoo.org/592880
+[2] https://bugs.gentoo.org/793992
+[3] https://bugs.gentoo.org/199856
+[4] https://www.gentoo.org/support/
+
+2021-07-23-libxcrypt-migration
+  Title                     migrating from glibc[crypt] to libxcrypt in ~arch
+  Author                    Andreas K. Hüttel <dilfridge@gentoo.org>
+  Author                    Sam James <sam@gentoo.org>
+  Posted                    2021-07-23
+  Revision                  1
+
+The implementation of libcrypt.so within glibc has been deprecated
+for a long time and will be removed in the near future.
+
+For this reason, we are following other distributions (where
+this has been tested for years already) and switching to the 
+external libxcrypt implementation, starting with ~arch 
+installations.
+
+This will be a regular update, and in nearly all cases you
+will not have to take any action and not observe any problems.
+
+We do recommend, however, that your system is *fully* up
+to date first. This is a standard recommendation but in this
+specific case, it is useful to have a simplified depgraph
+to ensure that Portage is able to smoothly calculate
+an upgrade path.
+
+That is, please take the opportunity to fully upgrade your
+systems now, before the migration occurs, to simplify matters.
+
+This change will occur on 2021-07-14 for ~arch users. Stable
+users will update at a later date.
+
+If for whatever reason you do *not* wish to switch now -
+which is only delaying the inevitable - you
+need to take the following steps:
+* unmask and enable the crypt USE flag of sys-libs/glibc
+* mask the system USE flag of sys-libs/libxcrypt
+* mask >=virtual/libcrypt-2
+
+If you wish to manually migrate now, there are a series
+of steps described on the wiki (see below), but the outline is:
+* unforce the crypt USE flag of sys-libs/glibc and disable it
+* unmask the system and split-usr (if applicable) USE flag of sys-libs/libxcrypt
+and enable it
+* unmask ~virtual/libcrypt-2
+
+Please note that if you last changed your password before ~2008,
+it may be using md5crypt or similar other weak mechanisms in /etc/shadow;
+a bug in PAM [0][1] may mean that you were unable to login. We recommend
+using "passwd" to change/refresh your password so it is using modern
+methods. A new version of PAM has been added to the tree to resolve this issue.
+
+In some cases, Portage may schedule a rebuild of certain packages in an
+incorrect order [2]. If building a package fails, please try upgrading
+libcrypt and libxcrypt first:
+
+# emerge -v1 virtual/libcrypt sys-libs/libxcrypt
+
+And then continue the world upgrade with Portage's "--keep-going=y".
+
+For more information or troubleshooting tips, please see:
+* https://wiki.gentoo.org/wiki/Project:Toolchain/libcrypt_implementation
+* https://bugs.gentoo.org/699422
+
+[0] https://bugs.gentoo.org/802267
+[1] https://bugs.gentoo.org/802807
+[2] https://bugs.gentoo.org/802210
+
+2021-08-01-tcpd-disabled
+  Title                     USE=tcpd no longer globally enabled
+  Author                    David Seifert <soap@gentoo.org>
+  Posted                    2021-08-01
+  Revision                  1
+
+On 2021-11-01, we will remove USE="tcpd" from the globally default
+enabled USE flags (https://bugs.gentoo.org/805077). USE="tcpd" usually
+enables sys-apps/tcp-wrappers for an ad hoc firewall based on
+/etc/hosts.allow and /etc/hosts.deny.
+
+The Base System project has come to the conclusion that 24 years after
+the last upstream release, tcp-wrappers is not suitable for a default
+configuration in 2021 anymore. Other distributions have completely
+removed support at this point. We strongly recommend you switch to more
+modern packet filters, such as BPF, nftables, or iptables. If you rely
+on tcp-wrappers, you can re-enable the flag, see
+
+  https://wiki.gentoo.org/wiki//etc/portage/package.use
+
+for package-specific ways to re-enable tcp-wrappers.
+

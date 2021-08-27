@@ -1,0 +1,245 @@
+/*Copyright (c) 2014 Citrix Systems, Inc.
+The materials in this file are protected by copyright and other intellectual property laws.
+Copying and use is permitted only by end users to enable use of Citrix server technology.
+Any other reproduction or use of this file, or any portion of it, is unlicensed.
+In no event may the file be reverse engineered or may copies be made in association with deobfuscation, decompilation or disassembly.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
+
+/*
+font file for citrixsans light is taken from https://s3.amazonaws.com/citrix-cdn/can.cdn/marketing/assets/fonts/citrix-sans/citrixsans-light.eot 
+similarly other font file are taken from the link https://s3.amazonaws.com/citrix-cdn/can.cdn/marketing/assets/fonts/citrix-sans/[file-name]
+font-weight is taken from the following link- https://s3.amazonaws.com/citrix-cdn/can.cdn/marketing/assets/fonts/citrix-fonts-linking.css
+*/
+@font-face{
+	font-family:"citrixsans";
+	font-style: normal;
+	font-weight: 400;
+	src:url("/resources/fonts/citrixsans/citrixsans-regular.eot") format('eot'),
+		url("/resources/fonts/citrixsans/citrixsans-regular.woff") format("woff"),
+		url("/resources/fonts/citrixsans/citrixsans-regular.ttf") format("truetype"),
+		url("/resources/fonts/citrixsans/citrixsans-regular.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+}
+
+/* Use the same fonts for all the elements for consistency */
+body{
+    -webkit-app-region: drag;
+}
+
+[type=radio]{
+display:none;
+}
+
+[type=radio]:checked ~ .radioOuterCircle > .radioInnerCircle {
+display:block;
+}
+
+[type=radio]:checked ~ .appElement > .radioOuterCircle > .radioInnerCircle {
+background-color: #aaaaaa;
+display:block;
+}
+
+/* Use the same fonts for all the elements for consistency */
+body ,button{
+	font-family: "citrixsans", "Helvetica Neue", "Helvetica", "Arial", "Sans Serif" ;
+}
+.parentElement{
+  background-color:white;
+  padding:20px;
+}
+
+.connectionCenterHeader{
+  font-size: 22px;
+  margin: 20px 0 20px 0;
+  font-weight:400;
+  text-align:left;
+  color:#666666;
+}
+
+.sessionsListElement{
+  position: relative;
+  padding: 10px 0 10px 0;
+  width: 430px;
+  display: inline-block;
+  -webkit-app-region: no-drag;
+}
+
+.sessionsListDescription{
+  margin: 0;
+  font-size:14px;
+  color: #666666;
+  font-weight: 700;
+  text-align: left;
+}
+
+.sessionList{
+  width: 430px;
+  height: 300px;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  margin: 10px 0 10px 0;
+  overflow-y:auto;
+  overflow-wrap:break-word;
+}
+
+.buttonsElement{
+  float: right;
+  width: 200px;
+  margin-top: 10px;
+  -webkit-app-region: no-drag;
+}
+
+.sessionButtonTitle{
+  margin: 0;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 700;
+  text-align: left;
+}
+
+.appButtonTitle{
+  margin: 25px 0 0 0;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 700;
+  text-align: left;
+}
+
+.sessionElement{
+  font-size: 14px;
+  padding:20px 0 20px 0;
+}
+
+.appElement{
+  font-size: 12px;
+  padding:10px 0 10px 20px;
+}
+
+label{
+  margin-left: 10px;
+  color:#666666;
+  position: relative;
+  top: -2px;
+  word-wrap: break-word;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.labelSession{
+  font-size: 16px;
+  font-weight:700;
+  max-width: 340px;
+}
+
+.labelApp{
+  font-size: 14px;
+  font-weight:400;
+  max-width: 320px;
+}
+
+.dummyDiv{
+  padding-top:10px;
+}
+
+.radioInnerCircle{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2071c5;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  display:none;
+}
+
+.radioOuterCircle{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #707070;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.selectedElement{
+  background-color:#f0f0f0;
+  color: #666666;
+}
+
+.commonButton {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  min-height: 44px;
+  min-width: 200px;
+  word-wrap:break-word;
+  border-radius:2px;
+}
+
+.sessionButton{
+  margin:10px 0 0 0px;
+  border:0px;
+  background-color: #2071c5;
+}
+
+.sessionButton:hover{
+  background-color: #055B94;
+}
+
+.sessionButton:active{
+  background-color: #2071c5;
+}
+
+.sessionButton:disabled{
+  background-color: rgba(32,113,197,0.4);
+  color:rgba(255,255,255,0.4);
+}
+
+.appButton{
+  margin:10px 0 0 0px;
+  border:0px;
+  background-color: #2071c5;
+}
+
+.appButton:hover{
+  background-color: #055B94;
+}
+
+.appButton:active{
+  background-color: #2071c5;
+}
+
+.appButton:disabled{
+  background-color: rgba(32,113,197,0.4);
+  color:rgba(255,255,255,0.4);
+}
+
+.close_button{
+  background-image : url("/resources/images/icon_close.png");
+  width : 17px;
+  height : 16px;
+  float : right;
+  margin :  12px 12px 0px 0px;/*body margin 8px + 12px = 20px*/
+  -webkit-app-region: no-drag;
+}
+
+.close_button:focus{
+  opacity:0.5;
+}
+
+.close_button:hover{
+  opacity:0.5;
+}
+
+.close_button:active{
+  opacity:0.35;
+}
+::-webkit-scrollbar-thumb {
+	width: 4px;
+	background-repeat:no-repeat;
+	background-color:#aaaaaa;
+}
+::-webkit-scrollbar {
+    width: 4px;
+    height:10px;
+}

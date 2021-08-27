@@ -1,0 +1,649 @@
+{
+   "AppRemoved": {
+      "description": "The resource to launch no longer exists, is no longer enabled or is no longer visible to current user.",
+      "message": "起動するリソースが存在しないか、有効でないか、または現在のユーザーには表示されません。"
+   },
+   "Button_Later": {
+      "description": "Later button for Chrome Workspace app Update Available notification",
+      "message": "後で"
+   },
+   "Button_Now": {
+      "description": "Now button for Chrome Workspace app Update Available notification",
+      "message": "すぐに"
+   },
+   "CRA_restart_message": {
+      "description": "New CRA update Available notification message.",
+      "message": "$1 を再起動して更新します。",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "CRA_update_notification": {
+      "description": "New Chrome Workspace app Update Available notification",
+      "message": "$1 の新しいバージョンを利用できます。",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "CR_config_applied": {
+      "description": "CRA configured using default cr file",
+      "message": "$app_name$ は現在、\"$file_name$\" を使って構成されています",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         },
+         "file_name": {
+            "content": "$2",
+            "example": "default.cr"
+         }
+      }
+   },
+   "CouldNotConnectToWorkstation": {
+      "description": "The server refused a connection. Currently applies to XenDesktop only.",
+      "message": "サーバーが接続を拒否しました。現在、XenDesktop にのみ適用されます。"
+   },
+   "GCP_error_code_111": {
+      "description": "If printer trying to print to is not found.",
+      "message": "プリンターが見つかりません。別のプリンターを選択してください。"
+   },
+   "GCP_error_code_403": {
+      "description": "When the file that is printing to GCP is corrupted.",
+      "message": "PDF に変換できませんでした。"
+   },
+   "GCP_error_code_default": {
+      "description": "Default error string",
+      "message": "Google クラウド プリントは利用できません。後でもう一度試してください。"
+   },
+   "GCP_no_printer_error": {
+      "description": "If user account does not contain any printer attached his/her GCP this error is shown",
+      "message": "Google クラウド プリントにプリンターが設定されていません。今すぐに設定してください。"
+   },
+   "GeneralAppLaunchError": {
+      "description": "General error that cannot be further specified.",
+      "message": "特定できない一般的なエラーです。"
+   },
+   "NoMoreActiveSessions": {
+      "description": "The user is not allowed any more active sessions. Currently applies to XenDesktop only.",
+      "message": "ユーザーはこれ以上アクティブなセッションを許可されません。現在、XenDesktop にのみ適用されます。"
+   },
+   "NotLicensed": {
+      "description": "The server does not have the required license to perform the requested activity.",
+      "message": "要求されたアクティビティを実行するために必要なライセンスがサーバーにありません。"
+   },
+   "ResourceError": {
+      "description": "General error that cannot be further specified.",
+      "message": "特定できない一般的なエラーです。"
+   },
+   "Unauthorized": {
+      "description": "The user is not logged in or authorized to access the data.",
+      "message": "ユーザーがログインしていない、またはデータへのアクセスを認証されていません。"
+   },
+   "UnavailableDesktop": {
+      "description": "No workstations are available to service this request. Currently applies to XenDesktop only.",
+      "message": "この要求を処理できるワークステーションがありません。現在、XenDesktop にのみ適用されます。"
+   },
+   "WorkstationInMaintenance": {
+      "description": "The requested workstation is in maintenance mode and cannot be used. Currently applies to XenDesktop only.",
+      "message": "要求されたワークステーションはメンテナンス モードで、使用できません。現在、XenDesktop にのみ適用されます。"
+   },
+   "account": {
+      "description": "Account Setting Heading Name",
+      "message": "アカウント"
+   },
+   "account_url": {
+      "description": "Account URL label",
+      "message": "アカウント URL"
+   },
+   "add": {
+      "description": "Add",
+      "message": "追加"
+   },
+   "add_google_cloud_printer": {
+      "description": "URL link to add the google cloud printer.",
+      "message": "Google クラウド プリンターを追加..."
+   },
+   "add_print_job_to_queue": {
+      "description": "Adding the print job to queue",
+      "message": "$session_name$ から $print_job_name$ をキューに追加しています。",
+      "placeholders": {
+         "print_job_name": {
+            "content": "$1",
+            "example": "ドキュメント 1"
+         },
+         "session_name": {
+            "content": "$2",
+            "example": "セッション ウィンドウのタイトル"
+         }
+      }
+   },
+   "add_store": {
+      "description": "Adding store front url",
+      "message": "\"$sfUrl$\" により提供された\"$storeName$\"を追加しますか?",
+      "placeholders": {
+         "sfUrl": {
+            "content": "$2",
+            "example": "\u003Cip address>"
+         },
+         "storeName": {
+            "content": "$1",
+            "example": "\u003Cstore name>"
+         }
+      }
+   },
+   "apply": {
+      "description": "Apply button display value",
+      "message": "適用(Y)"
+   },
+   "beaconUnreachable": {
+      "description": "Network is present but beacons are unreachable.",
+      "message": "サーバーに接続できません。ヘルプデスクに支援を要請するか、[アカウント設定] でサーバー アドレスをチェックしてください。"
+   },
+   "cancel": {
+      "description": "Cancel",
+      "message": "キャンセル"
+   },
+   "ceipSettingsCheckboxLabel": {
+      "description": "ceip settings checkbox label",
+      "message": "匿名の使用統計情報を送信して $app_name$ の機能向上に協力する",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "ceipSettingsTitle": {
+      "description": "ceip settings title",
+      "message": "カスタマー エクスペリエンス向上プログラム"
+   },
+   "citrix_receiver": {
+      "description": "Citrix Workspace app",
+      "message": "Citrix Workspace アプリ"
+   },
+   "citrix_workspace": {
+      "description": "Citrix Workspace for app name, tooltip etc",
+      "message": "Citrix Workspace"
+   },
+   "clientCursorSettingsCheckboxLabel": {
+      "description": "Client cursor settings checkbox label",
+      "message": "実際のカーソルが表示されていないときに補助カーソルを表示する"
+   },
+   "clientCursorSettingsTitle": {
+      "description": "Client cursor settings title",
+      "message": "クライアントのカーソル設定"
+   },
+   "configure_cra": {
+      "description": "Configure chrome app",
+      "message": "$app_name$ の構成",
+      "placeholders": {
+         "app_name": {
+            "content": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "connect_URL_secure_msg": {
+      "description": "Message saying connection to a StoreFront/Web interface/Gateway url over http",
+      "message": "\"$store_url$\" に対するこの接続は保護されていません。処理は、このサーバーを信頼している場合にのみ実行する必要があります。 ",
+      "placeholders": {
+         "store_url": {
+            "content": "$1",
+            "example": "\u003Cip address>"
+         }
+      }
+   },
+   "connect_button": {
+      "description": "Connect button display value",
+      "message": "接続"
+   },
+   "connect_confirm": {
+      "description": "Confirm message before connecting",
+      "message": "接続してもよろしいですか?"
+   },
+   "connection_center_app_buttons_title": {
+      "description": "Title for app buttons",
+      "message": "アプリの操作:"
+   },
+   "connection_center_ctrl_alt_del_button": {
+      "description": "Name for ctrl+alt+del button",
+      "message": "Ctrl+Alt+Del"
+   },
+   "connection_center_description": {
+      "description": "Description of radio buttons in connection center",
+      "message": "操作を実行するセッションまたはアプリケーションを選択します:"
+   },
+   "connection_center_devices_button": {
+      "description": "Name for preferences button",
+      "message": "デバイス"
+   },
+   "connection_center_disconnect_button": {
+      "description": "Name for disconnect button",
+      "message": "切断"
+   },
+   "connection_center_logoff_button": {
+      "description": "Name for logoff button",
+      "message": "ログオフ"
+   },
+   "connection_center_session_buttons_title": {
+      "description": "Title for session buttons",
+      "message": "セッションの操作:"
+   },
+   "connection_center_terminate_button": {
+      "description": "Name for terminate button",
+      "message": "終了"
+   },
+   "connection_center_title": {
+      "description": "Connection Center title message",
+      "message": "コネクションセンター"
+   },
+   "continue_button": {
+      "description": "Continue button display value",
+      "message": "続行"
+   },
+   "cra": {
+      "description": "Full form of cra",
+      "message": "Chrome OS 向け $app_name$",
+      "placeholders": {
+         "app_name": {
+            "content": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "default_printer_list_option": {
+      "description": "Default option shown in the printer list",
+      "message": "プリンターを選択してください"
+   },
+   "delete_warning": {
+      "description": "Warning before deleting a store",
+      "message": "次のストアを削除しようとしています"
+   },
+   "disabled_printer_option": {
+      "description": "Option shown when printer list is disabled.",
+      "message": "プリンターが設定されていません"
+   },
+   "done": {
+      "description": "Done button name",
+      "message": "完了"
+   },
+   "dpiScalingCheckboxLabel": {
+      "description": "DPI Scaling Checkbox Label",
+      "message": " モニターのセッションを高いデバイス ピクセル縦横比でスケール"
+   },
+   "dpiScalingTitle": {
+      "description": "High DPI Scaling title",
+      "message": "高 DPI スケール"
+   },
+   "enumerate_res_error": {
+      "description": "Couldn't enumerate resources for the user.",
+      "message": "ユーザーのリソースを列挙できませんでした。"
+   },
+   "error": {
+      "description": "Error",
+      "message": "エラー"
+   },
+   "error_app_open": {
+      "description": "Citrix Workspace app could not be opened",
+      "message": "$app_name$ を開けませんでした ",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "error_config_fail": {
+      "description": "Configuration failed msg",
+      "message": "$app_name$ 構成は \"$crFile$\" を使用できません",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         },
+         "crFile": {
+            "content": "$2",
+            "example": "config.cra"
+         }
+      }
+   },
+   "error_config_fail_withError": {
+      "description": "Configuration failed message",
+      "message": "$app_name$ 構成は \"$crFile$\" を使用できません、エラー $errorMsg$",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         },
+         "crFile": {
+            "content": "$2",
+            "example": "config.cra"
+         },
+         "errorMsg": {
+            "content": "$3"
+         }
+      }
+   },
+   "error_file_extension": {
+      "description": "Citrix Workspace app not configured to open unknown file extensions",
+      "message": "$app_name$ は e$file_type$ ファイル タイプを開くように構成されていません。",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         },
+         "file_type": {
+            "content": "$2",
+            "example": ".xyz"
+         }
+      }
+   },
+   "error_file_open_gdrive": {
+      "description": "Error message saying files can only be opened from Google drive",
+      "message": "$app_name$ は Google Drive からのファイルのみを開くことができます。",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "error_help_desk": {
+      "description": "",
+      "message": "次の情報をヘルプ デスクまでお知らせください: $1"
+   },
+   "error_incorrect_url": {
+      "description": "",
+      "message": "サーバーに接続できません。アドレスが正しく、また \"http://\" または \"https://\" が含まれているか確認してください。接続を実行できない場合は、ヘルプ デスクに支援を要請してください。"
+   },
+   "error_invalid_url": {
+      "description": "Enter valid URL.",
+      "message": "有効な URL を入力してください。"
+   },
+   "error_launch_generic": {
+      "description": "Citrix Workspace app couldn't launch the session due to the error specified using errorMsg",
+      "message": "$app_name$はセッションを起動できませんでした。エラー: $errorMsg$",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         },
+         "errorMsg": {
+            "content": "$2",
+            "example": "The server refused a connection. Currently applies to XenDesktop only."
+         }
+      }
+   },
+   "error_network_conn": {
+      "description": "Network connection error",
+      "message": "ネットワーク接続を確認してください。\"$sfUrl$\" に到達できません",
+      "placeholders": {
+         "sfUrl": {
+            "content": "$1",
+            "example": "\u003Cip address>"
+         }
+      }
+   },
+   "error_notConfigured": {
+      "description": "",
+      "message": "$app_name$ は構成されていません。",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "gatewayAddress": {
+      "description": "Gateway Address",
+      "message": "ゲートウェイ アドレス:"
+   },
+   "generalSettings": {
+      "description": "General setting title",
+      "message": "一般"
+   },
+   "general_setting_note": {
+      "description": "Note about general settings",
+      "message": "すべての変更は、セッションを再起動した後に有効になります。"
+   },
+   "genericError": {
+      "description": "Generic error",
+      "message": "一般的なエラー:"
+   },
+   "google_cloud_print_option": {
+      "description": "Google cloud print option name",
+      "message": "Google クラウド プリント"
+   },
+   "google_cloud_print_option_description": {
+      "description": "Google cloud print option description",
+      "message": "選択したクラウド プリンターを使用して紙に印刷します。"
+   },
+   "high_dpi_disable_notification": {
+      "description": "High dpi scaling disabled notification",
+      "message": "高 DPI スケーリングはデフォルトで無効になっています。高 DPI 対応デバイスの解像度を向上させるには、[設定] に移動し、[高 DPI スケール] チェックボックスをオンにします。"
+   },
+   "http_error_code_403": {
+      "description": "When Authentication of user is failed.",
+      "message": "資格情報を確認できませんでした。"
+   },
+   "http_error_code_404": {
+      "description": "When GCP server is down.",
+      "message": "Google クラウド プリント サーバーは利用できません。後でもう一度試してください。"
+   },
+   "http_error_code_413": {
+      "description": "HTTP request size is larger than the size of the request accepted by the GCP server.",
+      "message": "印刷するにはファイルが大きすぎます。"
+   },
+   "information": {
+      "description": "Information",
+      "message": "情報"
+   },
+   "internal_error": {
+      "description": "Internal error",
+      "message": "内部エラー"
+   },
+   "multimonitorSettingsCheckboxLabel": {
+      "description": "Multi-monitor settings checkbox label",
+      "message": "すべてのモニターにまたがって表示する"
+   },
+   "multimonitorSettingsTitle": {
+      "description": "Multi-monitor settings title",
+      "message": "マルチモニター設定"
+   },
+   "networkUnreachable": {
+      "description": "Network is unavailable.",
+      "message": "サーバーに接続できません。ネットワークを確認して再試行してください。"
+   },
+   "network_error": {
+      "description": "Network error",
+      "message": "ネットワーク エラー"
+   },
+   "new_store": {
+      "description": "Display value of a button to add a new store",
+      "message": "ストアを追加"
+   },
+   "null_callback": {
+      "description": "Callback passed is null",
+      "message": "callback = null"
+   },
+   "offlinestatus": {
+      "description": ": When offline is detected and when network goes down. ",
+      "message": "ネットワークに接続できません。ネットワークが使用できるようになったらもう一度試してください。"
+   },
+   "ok_button": {
+      "description": "ok button",
+      "message": "OK"
+   },
+   "one_time_printer_setup_message": {
+      "description": "One time message to user about printer setup.",
+      "message": "Google クラウド プリントで印刷する場合は、プリンター設定で設定できます。"
+   },
+   "open_PDF_option": {
+      "description": "Open PDF option name",
+      "message": "PDF 形式で印刷"
+   },
+   "open_PDF_option_description": {
+      "description": "Open PDF option description",
+      "message": "お使いのデバイスに、ドキュメントの PDF を保存します。印刷する前にドキュメントを確認できます。"
+   },
+   "policy_applied_config_fail": {
+      "description": "CR configuration failure message when admin has configured using google policies",
+      "message": "この $app_name$ 構成を変更できません。管理者が $app_name$ を構成するポリシーを使用中です。",
+      "placeholders": {
+         "app_name": {
+            "content": "$1",
+            "example": "Citrix Workspace アプリ"
+         }
+      }
+   },
+   "printed_file_to_GCP": {
+      "description": "Printed the file to printer",
+      "message": "$print_job_name$ が $printer_name$ に出力されました",
+      "placeholders": {
+         "print_job_name": {
+            "content": "$1",
+            "example": "Doc1"
+         },
+         "printer_name": {
+            "content": "$2",
+            "example": "プリンター名"
+         }
+      }
+   },
+   "printer": {
+      "description": "Printer Setting Heading Name",
+      "message": "プリンター"
+   },
+   "printer_setting_description": {
+      "description": "Printer Setting description",
+      "message": "デフォルトの印刷オプションを選択します。"
+   },
+   "printing_support_warning_message": {
+      "description": "Warning message about printer setup in VDA",
+      "message": "印刷を実行するには、IT 管理者が Citrix PDF プリンタードライバーをインストールする必要があります。"
+   },
+   "receiverVersionNumber": {
+      "description": "chrome Workspace app version",
+      "message": "Version $rx_version$",
+      "placeholders": {
+         "rx_version": {
+            "content": "$1",
+            "example": "2.5.2.312"
+         }
+      }
+   },
+   "reload_store_main": {
+      "description": "Tooltip for reload store page",
+      "message": "ストアを再読み込み"
+   },
+   "restart_now": {
+      "description": "Restart Citrix Workspace app button text",
+      "message": "すぐに再起動"
+   },
+   "seamless_multimonitor_drop_here": {
+      "description": "Text displayed when moving seamless apps to different monitor",
+      "message": "セッションをこのモニターに移動するには、ここにドラッグアンドドロップします"
+   },
+   "secureMsg_preference": {
+      "description": "To hide the secure connection dialog automatically from next launch onwards",
+      "message": "今後これを表示しない"
+   },
+   "sendFeedback": {
+      "description": "Send Feedback link text in Account settings",
+      "message": "フィードバックの送信"
+   },
+   "settings": {
+      "description": "Settings button display value",
+      "message": "設定"
+   },
+   "settings_main": {
+      "description": "Tool tip for account settings",
+      "message": "設定"
+   },
+   "store": {
+      "description": "StoreFront/Web interface/Gateway",
+      "message": "ストア"
+   },
+   "storeAddress": {
+      "description": "Store Address",
+      "message": "$store$ アドレス:",
+      "placeholders": {
+         "store": {
+            "content": "$1",
+            "example": "Store"
+         }
+      }
+   },
+   "storeName": {
+      "description": "Store Name",
+      "message": "$store$名:",
+      "placeholders": {
+         "store": {
+            "content": "$1",
+            "example": "Store"
+         }
+      }
+   },
+   "storeUnreachable": {
+      "description": "When network and beacon are reachable but store urls are unreachable",
+      "message": "サーバーに接続できません。ヘルプデスクに支援を要請するか、[アカウント設定] でサーバー アドレスをチェックしてください。"
+   },
+   "store_address": {
+      "description": "Store address label",
+      "message": "$store$ アドレス",
+      "placeholders": {
+         "store": {
+            "content": "$1",
+            "example": "ストア"
+         }
+      }
+   },
+   "store_address_change": {
+      "description": "When the store address is changed in account settings page",
+      "message": "サーバー アドレスが変更されました。"
+   },
+   "store_settings_change": {
+      "description": "Changing store url in settings page",
+      "message": "すべてのウィンドウを閉じて $app_name$ を再起動した後に$store$設定が適用されます。",
+      "placeholders": {
+         "app_name": {
+            "content": "$2",
+            "example": "Citrix Workspace アプリ"
+         },
+         "store": {
+            "content": "$1",
+            "example": "Store"
+         }
+      }
+   },
+   "store_to_delete": {
+      "description": "store to be deleted from multi store dropdown",
+      "message": "$store_url$",
+      "placeholders": {
+         "store_url": {
+            "content": "$1",
+            "example": "StoreFront URL"
+         }
+      }
+   },
+   "switch": {
+      "description": "Switch button display value",
+      "message": "切り替え"
+   },
+   "thirdPartyLicenses": {
+      "description": "Chrome third party notices link",
+      "message": "Chrome 向け Citrix Workspace アプリ サードパーティ製品についての通知"
+   },
+   "unauthorized_user_error": {
+      "description": "User is not logged in or authorized to access the data.",
+      "message": "ユーザーがログインしていない、またはデータへのアクセスを認証されていません。"
+   },
+   "urlPlaceholder": {
+      "description": "Watermark for URL field in Preferences page",
+      "message": "https://URL"
+   }
+}

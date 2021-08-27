@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sb="#FF79C6"
+
+cat ~/.config/sxhkd/hotkey \
+    | awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' \
+    | column -t -s $'\t' \
+    | dmenu -sb "$sb" -p "Short Key" -l 25 -i

@@ -1,0 +1,12 @@
+2021/07/07-17:50:19.653 8b6 Reusing MANIFEST /home/inibras/.config/google-chrome/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/07-17:50:19.653 8b6 Recovering log #4
+2021/07/07-17:50:19.704 8b6 Reusing old log /home/inibras/.config/google-chrome/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000004.log 
+2021/07/07-17:57:31.388 a8f Level-0 table #8: started
+2021/07/07-17:57:31.412 a8f Level-0 table #8: 1206904 bytes OK
+2021/07/07-17:57:31.416 a8f Delete type=0 #4
+2021/07/07-17:57:55.087 9b1 Compacting 1@1 + 1@2 files
+2021/07/07-17:57:55.125 9b1 Generated table #9@1: 19719 keys, 1020420 bytes
+2021/07/07-17:57:55.125 9b1 Compacted 1@1 + 1@2 files => 1020420 bytes
+2021/07/07-17:57:55.127 9b1 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/07/07-17:57:55.128 9b1 Delete type=2 #8
+2021/07/07-17:57:55.128 9b1 Delete type=2 #5

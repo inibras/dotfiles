@@ -1,0 +1,6 @@
+2021/07/11-21:20:32.060 b6f Creating DB /home/inibras/.config/google-chrome/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb since it was missing.
+2021/07/11-21:20:32.082 b6f Reusing MANIFEST /home/inibras/.config/google-chrome/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/11-23:00:57.417 26b9 Level-0 table #5: started
+2021/07/11-23:00:57.421 26b9 Level-0 table #5: 2050 bytes OK
+2021/07/11-23:00:57.427 26b9 Delete type=0 #3
+2021/07/11-23:00:57.437 26b9 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

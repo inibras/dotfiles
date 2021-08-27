@@ -1,0 +1,19 @@
+pkill picom  
+pkill polybar 
+pkill batterywarn 
+pkill dunst
+pkill bar
+xrdb -remove &
+xrdb /home/inibras/xrdb/girl/girl &
+feh --bg-fill /home/inibras/Wallpapers/girl.png &
+
+sleep 0.1
+
+picom --config /home/inibras/.config/picom/picom.conf &
+/home/inibras/bin/batterywarn &
+/home/inibras/bin/dunstxres &
+dunst &
+$HOME/bin/bar &
+pkill -USR1 dwm
+
+exec /usr/local/bin/dwm

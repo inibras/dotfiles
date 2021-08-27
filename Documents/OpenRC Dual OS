@@ -1,0 +1,52 @@
+Dual boot Arch & Windows
+Contoh :
+/dev/sda1 for efi boot
+/dev/sda2 for windows
+.
+.
+/dev/sda5 for linux root
+/dev/sda6 for swap
+/dev/sda7 for home
+Copy di terminal:
+copy whole line using alt+6 and now go to start by using pageup button or 
+=================================================
+cfdisk
+mkfs.fat -F 32 /dev/sda1 (EFI System)
+mkfs.ext4 /dev/sda5 -L System
+mkswap /dev/sda6 -L Swap
+swapon /dev/sda6
+mount /dev/sda5 /mnt
+mkdir -p /mnt/boot/efi
+mkdir -p /mnt/home
+
+ping to website....
+
+basestrap /mnt base base-devel openrc elogind-openrc
+basestrap /mnt linux linux-firmware ntfs-3g
+fstabgen -U /mnt >> /mnt/etc/fstab
+artix-chroot /mnt 
+ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+hwclock -w -l
+pacman -S nano
+nano /etc/locale.gen
+uncomment #en_US.
+locale-gen
+nano /etc/locale.conf
+LC_COLLATE=C
+LANG=en_US.UTF-8
+LANGUAGE=en_US.UTF-8
+pacman -S grub os-prober efibootmgr
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+intel-ucode
+passwd root
+useradd -m -g users -G wheel,storage,power,audio,video -s /bin/bash inibras
+passwd inibras
+nano /etc/sudoers
+nano /etc/hostname
+nano /etc/hosts
+nano /etc/conf.d/hostname
+pacman -S networkmanager
+pacman -S dhcpcd
+pacman -S wpa_supplicant dialog bash-completion
+pacman -S xorg

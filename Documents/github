@@ -1,0 +1,53 @@
+git config --global user.name "inibras"
+git config --global user.email sarbini@live.com
+git config --global user.password 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
+$ git init
+$ git add .
+git commit -m "commat commit"
+git remote add origin https://github.com/inibras/gento0o
+# This means register your repository on Github as a remote repository
+$ git push origin master
+
+
+----------Main---------------
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+
+If any error
+
+try this pull without rebase first and see if its working
+
+git pull origin master
+Than you can pull again with --rebase
+
+git pull --rebase origin master
+Then do a push
+
+git push origin master
+
+
+Adding file on existing git----
+git add <folder>/*, or even git add *
+
+Then use git commit -m "<Message>" to commit files
+
+Finally git push -u origin master to push files.
+
+
+
+
+
+…or create a new repository on the command line
+echo "# dotfiles" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/inibras/dotfiles.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/inibras/dotfiles.git
+git branch -M master
+git push -u origin master
