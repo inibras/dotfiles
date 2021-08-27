@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 sudo apt install -y rsync openbox obconf tint2 bspwm thunar polybar thunar-volman thunar-archive-plugin xorg lxappearance zsh geany dnsutils \
 conky rofi dmenu dunst mousepad neofetch w3m-img w3m imagemagick mpv mpd ncmpcpp mpc bluez viewnior gnome-themes-extra gnome-themes-extra-data \
-network-manager network-manager-gnome blueman pulseaudio pavucontrol rxvt-unicode gvfs xarchiver picom fonts-liberation gtk2-engines-pixbuf \
-libnotify-bin notify-osd papirus-icon-theme xbacklight xdg-user-dirs tumbler ffmpegthumbnailer i3lock-fancy vim htop git python3-pip slim \
+network-manager network-manager-gnome blueman pulseaudio pavucontrol rxvt-unicode gvfs xarchiver picom fonts-liberation gtk2-engines-pixbuf libxext-dev \
+libnotify-bin notify-osd papirus-icon-theme xbacklight xdg-user-dirs tumbler ffmpegthumbnailer i3lock-fancy vim htop git python3-pip slim libx11-dev \
 mousepad unclutter qt5ct qt5-style-plugins lxpolkit scrot feh firefox-esr xclip libxcb-shape0-dev libxcb-keysyms1-dev libxcb-ewmh-dev yad curl \
 libxcb-util0-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-xinerama0-dev libpulse-dev libboost-all-dev libminizip1 wget net-tools ranger pcmanfm
