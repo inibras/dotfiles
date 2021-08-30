@@ -1,6 +1,6 @@
 git config --global user.name "inibras"
 git config --global user.email sarbini@live.com
-git config --global user.password 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
+git config --global user.password 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
 $ git init
 $ git add .
 git commit -m "commat commit"
