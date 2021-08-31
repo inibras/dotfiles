@@ -1,0 +1,158 @@
+alias cari="sudo emerge -ask"
+alias mpsytins="pip install --user -U git+https://github.com/mps-youtube/mps-youtube.git"
+alias NCMP="sh /home/inibras/.ncmpcpp/launch"
+alias defapps="printf '\ec'; ${HOME}/.scripts/default-apps/launch; ${HOME}/.scripts/default-apps/launch -e"
+#Dialout USB
+alias consub="sudo chmod 666 /dev/ttyUSB0"
+#YT Download
+alias ytbl="youtube-dl --list-formats"
+alias ytbd="youtube-dl -f"
+##Update n Upgrade
+alias updt1="sudo emaint -a sync"
+alias updt2="sudo emerge --ask --verbose --update --deep --with-bdeps=y --newuse @world"
+alias UPDG="sudo emerge --update --newuse --deep @world"
+#sudo emerge --ask --update --newuse --with-bdeps=y --deep @world"
+alias updt3="sudo emerge --ask --depclean"
+alias updt4="sudo revdep-rebuild"
+alias updt5="sudo eclean -d distfiles"
+#Pyth Environment
+alias envact="source $HOME/Pyth-Project/my-env/bin/activate"
+#Archroot
+alias archm="archroot -m"
+alias archu="archroot -u"
+alias archen="archroot --enter"
+#FROM Owl
+alias c="clear"
+alias q="exit"
+alias hd="hexdump -C"
+alias default-apps="clear && ~/.scripts/default-apps/launch && ~/.scripts/default-apps/launch -e"
+alias pacrem="$PRIV pacman -Rcns"
+alias yayupd="yay -Sy"
+alias yayupg="yay -Syu"
+alias unemerge="sudo emerge -C"
+alias emergeins="sudo emerge -av"
+alias emergepv="sudo emerge -pv"
+alias snapsh="sudo emerge-webrsync"
+alias emergeupg="sudo emerge -av --update --deep --changed-use @world"
+alias emergedepc="sudo emerge --depclean -av"
+alias emergenuse="sudo emerge -av --update --newuse --deep @world"
+alias emergecuse="sudo emerge -av --update --changed-use --deep @world"
+alias ecleandist="sudo eclean-dist --deep"
+alias ecleankern="sudo eclean-kernel -n 3"
+alias rc-service="sudo rc-service"
+alias rc-update="sudo rc-update"
+#Power Menu
+alias shutdown='sudo shutdown now'
+alias reboot='sudo reboot'
+#Hacking
+alias suged='sudo bash ~/Apps/airgeddon/airgeddon.sh'
+alias sukato='sudo katoolin3'
+#Sudo
+alias sule='sudo leafpad'
+alias suno='sudo nano'
+alias suvim='sudo vim'
+alias sumo='sudo mousepad'
+alias supata='sudo apt autoremove'
+alias susys='sudo systemctl'
+#alias sudo='sudo -h 127.0.0.1'
+#Void Linux
+alias xbpup='sudo xbps-install -Su'
+alias xbpin='sudo xbps-install -S'
+alias xbpqr='sudo xbps-query -Rs'
+alias xbprm='sudo xbps-remove'
+#Debian and its derivatives.
+alias aptinx='sudo apt install -t kali-rolling'
+alias aptsx='sudo apt search -t kali-rolling'
+alias aptinbp='sudo apt -t buster-backports install'
+alias apts='sudo apt search'
+alias aptin='sudo apt install'
+alias aptrm='sudo apt-get remove'
+alias upt='sudo apt update'
+alias upg='sudo apt upgrade'
+alias rein='sudo apt reinstall'
+#Arch Linux
+alias inyay='git clone https://aur.archlinux.org/yay-bin.git && cd ./yay-bin && makepkg -si && cd .. && rm -rf yay-bin'
+alias pacs='sudo pacman -Ss'
+alias pacy='sudo pacman -Sy'
+alias pacin='sudo pacman -S'
+alias pacrm='sudo pacman -R'
+alias pacup='sudo pacman -Syu --noconfirm'
+alias yays='yay -Ss'
+alias yayy='yay -Sy'
+alias yayin='yay -S'
+alias yayup='yay -Syua --noconfirm'
+alias yayrm='yay -R'
+alias pacba='pacman -Sg | grep blackarch'
+alias pacbaf='pacman -Sgg | grep blackarch-wireless'
+#STOW
+alias stbsp='stow $HOME/Apps/BSPWM_DEB -t ~/'
+alias unstbsp='stow -D $HOME/Apps/BSPWM_DEB' 
+alias stbsp='stow $HOME/Apps/DWM_Deb -t ~/'
+alias unstbsp='stow -D $HOME/Apps/DWM_Deb' 
+
+#Change DM
+alias DM='sudo dpkg-reconfigure sddm'
+
+# ls
+alias ls='ls -F --color=auto'
+alias l='ls -Flh --color=auto'
+alias ll='ls -Flha --color=auto'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# interactive
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# scrot
+alias chees='$HOME/.scripts/shotify'
+
+#NCMPCPP
+alias ncmue='mpd && urxvt -g 91x13 -e ~/.ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug'
+alias alart='mpd && urxvt -g 87x13 -e ncmpcpp -c "~/.ncmpcpp/config-tam"'
+alias music='tmux new-session -s $$ "tmux source-file ~/.ncmpcpp/tsession"'
+alias kmusic='_trap_exit() { tmux kill-session -t $$; }'
+alias ncm2='$HOME/.ncmpcpp/ncmpcpp2'
+alias rncm='mpd && ncmpcpp'
+alias kncm='killall mpd ncmpcpp'
+# verbose
+alias mkdir='mkdir -v'
+alias rmdir='rmdir -v'
+
+# git
+alias gs='git status --short'
+alias gS='git status'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gcl='git clone'
+alias gp='git push'
+alias gl='git log --all --decorate --oneline --graph'
+alias gL='git log'
+alias gt='git ls-tree -r "$(git rev-parse --abbrev-ref HEAD)" --name-only'
+
+
+
+# aria2
+alias dl='aria2c -x 16 -s 16'
+											
+# battery
+alias W='bc -l <<< "$(cat /sys/class/power_supply/BAT1/voltage_now)*$(cat /sys/class/power_supply/BAT1/current_now)/10^12" | cut -b -4'
+alias up='uptime -p'
+
+# tmux
+alias t='tmux'
+alias ta='tmux attach'
+
+# less
+alias less='less --raw-control-chars'
+
+# diff
+alias diff='git diff --no-index'
+
+# feh
+alias feh='feh --scale-down --auto-zoom'
