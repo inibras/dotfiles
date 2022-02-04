@@ -1,10 +1,8 @@
-# This system was installed using small removable media
-# (e.g. netinst, live or single CD). The matching "deb cdrom"
-# entries were disabled at the end of the installation process.
-# For information about how to configure apt package sources,
-# see the sources.list(5) manual.
-deb http://security.debian.org/ bookworm-security main contrib non-free
-deb http://kartolo.sby.datautama.net.id/debian/ bookworm main contrib non-free
-deb http://kartolo.sby.datautama.net.id/debian/ bookworm-updates main contrib non-free
-deb http://deb.debian.org/debian buster-backports main contrib non-free
-deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
+
+deb http://security.debian.org/ bullseye-security main contrib non-free
+#deb http://kartolo.sby.datautama.net.id/debian/ bookworm main contrib non-free
+#deb https://kartolo.sby.datautama.net.id/debian/ bookworm-updates main contrib non-free
+deb http://deb.debian.org/debian bullseye-backports main contrib non-free
+#deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
+deb http://kebo.pens.ac.id/debian/ bullseye main contrib non-free
+deb http://kebo.pens.ac.id/debian/ bullseye-updates main contrib non-free
